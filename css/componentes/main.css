@@ -1,5 +1,4 @@
 body #main {
-  border: solid 3px red;
   width: auto;
   height: 100vh;
   padding-top: 50px;
@@ -33,7 +32,9 @@ body #main nav .navigation ul {
 body #main nav .navigation ul li a {
   color: black;
 }
-body #main nav .navigation ul li a .fa-bars, body #main nav .navigation ul li a .language, body #main nav .navigation ul li a .fa-moon {
+body #main nav .navigation ul li a .fa-bars,
+body #main nav .navigation ul li a .language,
+body #main nav .navigation ul li a .fa-moon {
   transform: translateY(-20px);
   transition: 1s ease-in-out;
 }
@@ -42,7 +43,6 @@ body #main nav .navigation ul li a .intro {
 }
 body #main .welcomeMessage {
   margin-top: 30px;
-  border: solid 5px rgb(42, 103, 156);
 }
 body #main .welcomeMessage .welcome {
   display: flex;
@@ -54,9 +54,29 @@ body #main .welcomeMessage .welcome {
 body #main .welcomeMessage .welcome .welcomeText {
   color: transparent; /* Hace el relleno del texto transparente */
   -webkit-text-stroke: 1px black; /* Borde de 2px de ancho y color negro */
+  letter-spacing: 2px;
 }
 body #main .welcomeMessage .welcome .name {
   color: blue;
+}
+body #main .presentation {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+body #main .presentation .presentationText {
+  text-align: center;
+  font-size: 10px;
+}
+body #main .moreInfo {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+body #main .moreInfo p {
+  font-size: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
