@@ -1,0 +1,56 @@
+body {
+  #main {
+    border: solid 3px red;
+    width: auto;
+    height: 100vh;
+    padding-top: 50px;
+    margin: 0px 40px;
+    nav {
+      border: solid 1px red;
+      display: flex;
+      .logoContainer {
+        border: solid 1px red;
+        width: 50%;
+        p {
+          width: auto;
+        }
+      }
+      .navigation {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        border: solid 1px blue;
+        width: 50%;
+        ul {
+          gap: 15px;
+          display: flex;
+          border: solid 1px red;
+          li {
+            a {
+              color: black;
+            }
+          }
+        }
+      }
+    }
+    .welcomeMessage {
+      margin-top: 30px;
+      border: solid 5px rgb(42, 103, 156);
+
+      .welcome {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        text-transform: uppercase;
+        margin: 3px;
+        .welcomeText {
+          color: transparent; /* Hace el relleno del texto transparente */
+          -webkit-text-stroke: 1px black; /* Borde de 2px de ancho y color negro */
+        }
+        .name {
+          color: blue;
+        }
+      }
+    }
+  }
+}
