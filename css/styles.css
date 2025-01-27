@@ -16,30 +16,39 @@ body #main {
   margin: 0px 40px;
 }
 body #main nav {
-  border: solid 1px red;
   display: flex;
+  overflow: hidden;
 }
 body #main nav .logoContainer {
-  border: solid 1px red;
   width: 50%;
 }
-body #main nav .logoContainer p {
+body #main nav .logoContainer .logo {
   width: auto;
+  transform: translateY(-20px);
+  transition: 1s ease-in-out;
+}
+body #main nav .logoContainer .intro {
+  transform: translateY(0px);
 }
 body #main nav .navigation {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  border: solid 1px blue;
   width: 50%;
 }
 body #main nav .navigation ul {
   gap: 15px;
   display: flex;
-  border: solid 1px red;
 }
 body #main nav .navigation ul li a {
   color: black;
+}
+body #main nav .navigation ul li a .fa-bars, body #main nav .navigation ul li a .language, body #main nav .navigation ul li a .fa-moon {
+  transform: translateY(-20px);
+  transition: 1s ease-in-out;
+}
+body #main nav .navigation ul li a .intro {
+  transform: translateY(0px);
 }
 body #main .welcomeMessage {
   margin-top: 30px;

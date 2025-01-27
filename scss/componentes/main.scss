@@ -6,28 +6,40 @@ body {
     padding-top: 50px;
     margin: 0px 40px;
     nav {
-      border: solid 1px red;
+      // border: solid 1px rgb(172, 237, 80);
       display: flex;
+      overflow: hidden;
       .logoContainer {
-        border: solid 1px red;
         width: 50%;
-        p {
+        .logo {
           width: auto;
+          transform: translateY(-20px);
+          transition: 1s ease-in-out;
+        }
+        .intro {
+          transform: translateY(0px);
         }
       }
       .navigation {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        border: solid 1px blue;
         width: 50%;
         ul {
           gap: 15px;
           display: flex;
-          border: solid 1px red;
           li {
             a {
               color: black;
+              .fa-bars, .language, .fa-moon {
+                transform: translateY(-20px);
+                transition: 1s ease-in-out;
+              }
+              
+              .intro {
+                transform: translateY(0px);
+              }
+
             }
           }
         }
@@ -36,7 +48,6 @@ body {
     .welcomeMessage {
       margin-top: 30px;
       border: solid 5px rgb(42, 103, 156);
-
       .welcome {
         display: flex;
         justify-content: center;
