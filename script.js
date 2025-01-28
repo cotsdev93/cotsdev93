@@ -6,7 +6,7 @@ function mainAnimation() {
   logo.classList.add("intro");
   setTimeout(() => {
     menu.classList.add("intro");
-  }, 500);
+  }, 300);
   setTimeout(() => {
     language.classList.add("intro");
   }, 700);
@@ -24,7 +24,7 @@ function mainAnimation() {
 
   setTimeout(() => {
     moreInfo.classList.add("intro");
-  }, 1200);
+  }, 1300);
   setTimeout(() => {
     presentation.classList.add("intro");
   }, 1300);

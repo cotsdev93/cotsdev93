@@ -50,6 +50,8 @@ body #main .welcomeMessage .welcome {
   gap: 5px;
   text-transform: uppercase;
   margin: 3px;
+  font-size: 30px;
+  font-weight: 600;
 }
 body #main .welcomeMessage .welcome .welcomeText {
   color: transparent; /* Hace el relleno del texto transparente */
@@ -72,8 +74,7 @@ body #main .wTwo {
 body #main .presentation {
   text-align: center;
   margin-top: 10px;
-  border: solid 1px red;
-  font-size: 10px;
+  font-size: 18px;
 }
 body #main .presentation .pOne {
   transition: all 1s;
@@ -98,9 +99,15 @@ body #main .moreInfo {
   transform: translateY(-50px);
   opacity: 0;
   transition: all 1s;
+  font-size: 14px;
 }
-body #main .moreInfo p {
-  font-size: 10px;
+body #main .moreInfo .pContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+body #main .moreInfo .pContainer p {
+  font-size: 14px;
 }
 body #main .intro {
   transform: translateY(0px);
