@@ -16,15 +16,29 @@ function mainAnimation() {
 
   const moreInfo = document.querySelector(".moreInfo");
   const presentation = document.querySelector(".presentation");
-  const welcomeMessage = document.querySelector(".welcomeMessage");
+
+  const wOne = document.querySelector(".wOne");
+  const wTwo = document.querySelector(".wTwo");
+  const pOne = document.querySelector(".pOne")
+  const pTwo = document.querySelector(".pTwo")
+
   setTimeout(() => {
     moreInfo.classList.add("intro");
-  }, 1100);
+  }, 1200);
   setTimeout(() => {
     presentation.classList.add("intro");
   }, 1300);
   setTimeout(() => {
-    welcomeMessage.classList.add("intro");
+    wOne.classList.add("intro");
+  }, 1800);
+  setTimeout(() => {
+    wTwo.classList.add("intro");
+  }, 1700);
+  setTimeout(() => {
+    pOne.classList.add("intro")
   }, 1600);
+  setTimeout(() => {
+    pTwo.classList.add("intro")
+  }, 1500);
 }
 mainAnimation();

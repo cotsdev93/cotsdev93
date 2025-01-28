@@ -48,9 +48,7 @@ body {
     }
     .welcomeMessage {
       margin-top: 30px;
-      transition: all 1s;
-      transform: translateY(-50px);
-      opacity: 0;
+
       .welcome {
         display: flex;
         justify-content: center;
@@ -67,16 +65,35 @@ body {
         }
       }
     }
-    .presentation {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
+    .wOne{
       transition: all 1s;
       transform: translateY(-50px);
       opacity: 0;
-      .presentationText {
-        text-align: center;
-        font-size: 10px;
+    }
+    .wTwo{
+      transition: all 1s;
+      transform: translateY(-50px);
+      opacity: 0; 
+    }
+    .presentation {
+      text-align: center;
+      margin-top: 10px;
+
+      border: solid 1px red; 
+      font-size: 10px;
+      .pOne {
+        transition: all 1s;
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      .pTwo {
+        transition: all 1s;
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      .intro {
+        transform: translateY(0px);
+        opacity: 1;
       }
     }
     .moreInfo {
