@@ -42,3 +42,4 @@ function mainAnimation() {
   }, 1500);
 }
 mainAnimation();
+  

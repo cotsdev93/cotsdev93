@@ -1,12 +1,10 @@
 body {
   #main {
-    // border: solid 3px red;
     width: auto;
     height: 100vh;
     padding-top: 50px;
     margin: 0px 40px;
     nav {
-      // border: solid 1px rgb(172, 237, 80);
       display: flex;
       overflow: hidden;
       .logoContainer {
@@ -30,7 +28,7 @@ body {
           display: flex;
           li {
             a {
-              color: black;
+              color:$main;
               .fa-bars,
               .language,
               .fa-moon {
@@ -59,11 +57,11 @@ body {
         font-weight: 600;
         .welcomeText {
           color: transparent; /* Hace el relleno del texto transparente */
-          -webkit-text-stroke: 1px black; /* Borde de 2px de ancho y color negro */
+          -webkit-text-stroke: 1px $main; /* Borde de 2px de ancho y color negro */
           letter-spacing: 2px;
         }
         .name {
-          color: blue;
+          color: $second;
         }
       }
     }
@@ -106,12 +104,36 @@ body {
       opacity: 0;
       transition: all 1s;
       font-size: 14px;
+
       .pContainer {
         display: flex;
-       align-items: center;
-       gap: 5px;
+        align-items: center;
+        gap: 5px;
+        position: relative; /* Necesario para posicionar el pseudo-elemento */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el contenedor */
+        padding-bottom: 2px; /* Espacio para el subrayado */
+      
+        /* Estilos del texto dentro del contenedor */
         p {
           font-size: 14px;
+          text-decoration: none; /* Elimina el subrayado por defecto */
+        }
+      
+        /* Pseudo-elemento para el subrayado */
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0; /* Posición del subrayado */
+          width: 0; /* Inicialmente sin anchura */
+          height: 1.5px; /* Grosor del subrayado */
+          background-color: $main; /* Color del subrayado */
+          transition: width 0.6s ease; /* Animación de la anchura */
+        }
+      
+        /* Efecto al hacer hover en el contenedor */
+        &:hover::after {
+          width: 100%; /* Ancho completo al hacer hover */
         }
       }
     }

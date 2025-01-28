@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   text-decoration: none;
   list-style: none;
@@ -40,7 +41,7 @@ body #main nav .navigation ul {
   display: flex;
 }
 body #main nav .navigation ul li a {
-  color: black;
+  color: #000000;
 }
 body #main nav .navigation ul li a .fa-bars,
 body #main nav .navigation ul li a .language,
@@ -65,11 +66,11 @@ body #main .welcomeMessage .welcome {
 }
 body #main .welcomeMessage .welcome .welcomeText {
   color: transparent; /* Hace el relleno del texto transparente */
-  -webkit-text-stroke: 1px black; /* Borde de 2px de ancho y color negro */
+  -webkit-text-stroke: 1px #000000; /* Borde de 2px de ancho y color negro */
   letter-spacing: 2px;
 }
 body #main .welcomeMessage .welcome .name {
-  color: blue;
+  color: #469ae9;
 }
 body #main .wOne {
   transition: all 1s;
@@ -115,9 +116,29 @@ body #main .moreInfo .pContainer {
   display: flex;
   align-items: center;
   gap: 5px;
+  position: relative; /* Necesario para posicionar el pseudo-elemento */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el contenedor */
+  padding-bottom: 2px; /* Espacio para el subrayado */
+  /* Estilos del texto dentro del contenedor */
+  /* Pseudo-elemento para el subrayado */
+  /* Efecto al hacer hover en el contenedor */
 }
 body #main .moreInfo .pContainer p {
   font-size: 14px;
+  text-decoration: none; /* Elimina el subrayado por defecto */
+}
+body #main .moreInfo .pContainer::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0; /* Posición del subrayado */
+  width: 0; /* Inicialmente sin anchura */
+  height: 1.5px; /* Grosor del subrayado */
+  background-color: #000000; /* Color del subrayado */
+  transition: width 0.6s ease; /* Animación de la anchura */
+}
+body #main .moreInfo .pContainer:hover::after {
+  width: 100%; /* Ancho completo al hacer hover */
 }
 body #main .intro {
   transform: translateY(0px);
