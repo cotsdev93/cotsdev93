@@ -43,6 +43,9 @@ body #main nav .navigation ul li a .intro {
 }
 body #main .welcomeMessage {
   margin-top: 30px;
+  transition: all 1s;
+  transform: translateY(-50px);
+  opacity: 0;
 }
 body #main .welcomeMessage .welcome {
   display: flex;
@@ -63,6 +66,9 @@ body #main .presentation {
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  transition: all 1s;
+  transform: translateY(-50px);
+  opacity: 0;
 }
 body #main .presentation .presentationText {
   text-align: center;
@@ -74,9 +80,16 @@ body #main .moreInfo {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: all 1s;
 }
 body #main .moreInfo p {
   font-size: 10px;
+}
+body #main .intro {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 /*# sourceMappingURL=main.css.map */
