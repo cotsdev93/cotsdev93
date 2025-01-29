@@ -19,8 +19,8 @@ function mainAnimation() {
 
   const wOne = document.querySelector(".wOne");
   const wTwo = document.querySelector(".wTwo");
-  const pOne = document.querySelector(".pOne")
-  const pTwo = document.querySelector(".pTwo")
+  const pOne = document.querySelector(".pOne");
+  const pTwo = document.querySelector(".pTwo");
 
   setTimeout(() => {
     moreInfo.classList.add("intro");
@@ -35,28 +35,23 @@ function mainAnimation() {
     wTwo.classList.add("intro");
   }, 1700);
   setTimeout(() => {
-    pOne.classList.add("intro")
+    pOne.classList.add("intro");
   }, 1600);
   setTimeout(() => {
-    pTwo.classList.add("intro")
+    pTwo.classList.add("intro");
   }, 1500);
 }
 mainAnimation();
 
 function reverseAnimation() {
-  const logo = document.querySelector(".logo");
   const language = document.querySelector(".language");
   const moon = document.querySelector(".fa-moon");
-  const menu = document.querySelector(".fa-bars");
-
   const moreInfo = document.querySelector(".moreInfo");
   const presentation = document.querySelector(".presentation");
-
   const wOne = document.querySelector(".wOne");
   const wTwo = document.querySelector(".wTwo");
   const pOne = document.querySelector(".pOne");
   const pTwo = document.querySelector(".pTwo");
-
 
   setTimeout(() => {
     pTwo.classList.remove("intro");
@@ -83,15 +78,19 @@ function reverseAnimation() {
     wOne.classList.remove("intro");
   }, 0);
   setTimeout(() => {
-    moon.classList.remove("intro")
+    moon.classList.remove("intro");
   }, 300);
   setTimeout(() => {
-    language.classList.remove("intro")
+    language.classList.remove("intro");
   }, 400);
 }
 
-// Llamar a la función para probar
-setTimeout(() => {
+const myProjects = document.querySelector(".myProjects");
+
+myProjects.addEventListener("click", () => {
   reverseAnimation();
-  
-}, 5000);
+  const main = document.querySelector("#main");
+  setTimeout(() => {
+    main.classList.add("display");
+  }, 1200);
+});

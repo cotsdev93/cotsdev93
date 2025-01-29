@@ -9,51 +9,53 @@
   font-family: "League Spartan", serif;
 }
 
-body #main {
-  width: auto;
-  height: 100vh;
-  padding-top: 50px;
-  margin: 0px 40px;
-}
-body #main nav {
+body nav {
+  margin: 40px;
   display: flex;
   overflow: hidden;
 }
-body #main nav .logoContainer {
+body nav .logoContainer {
   width: 50%;
 }
-body #main nav .logoContainer .logo {
+body nav .logoContainer .logo {
   width: auto;
   transform: translateY(-20px);
   transition: 1s ease-in-out;
 }
-body #main nav .logoContainer .intro {
+body nav .logoContainer .intro {
   transform: translateY(0px);
 }
-body #main nav .navigation {
+body nav .navigation {
   display: flex;
   justify-content: flex-end;
   width: 50%;
 }
-body #main nav .navigation ul {
+body nav .navigation ul {
   gap: 15px;
   display: flex;
   align-items: center;
 }
-body #main nav .navigation ul li a {
+body nav .navigation ul li a {
   color: #000000;
 }
-body #main nav .navigation ul li a .fa-bars,
-body #main nav .navigation ul li a .language,
-body #main nav .navigation ul li a .fa-moon {
+body nav .navigation ul li a .fa-bars,
+body nav .navigation ul li a .language,
+body nav .navigation ul li a .fa-moon {
   transform: translateY(-20px);
   transition: 0.8s ease-in-out;
 }
-body #main nav .navigation ul li a .intro {
+body nav .navigation ul li a .intro {
   transform: translateY(0px);
 }
+
+body {
+  height: 100vh;
+}
+body #main {
+  width: auto;
+}
 body #main .welcomeMessage {
-  margin-top: 30px;
+  margin-top: 0px;
 }
 body #main .welcomeMessage .welcome {
   display: flex;
@@ -143,6 +145,9 @@ body #main .moreInfo .pContainer:hover::after {
 body #main .intro {
   transform: translateY(0px);
   opacity: 1;
+}
+body .display {
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
