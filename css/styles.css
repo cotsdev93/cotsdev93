@@ -33,12 +33,12 @@ body #main nav .logoContainer .intro {
 body #main nav .navigation {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
   width: 50%;
 }
 body #main nav .navigation ul {
   gap: 15px;
   display: flex;
+  align-items: center;
 }
 body #main nav .navigation ul li a {
   color: #000000;
@@ -47,7 +47,7 @@ body #main nav .navigation ul li a .fa-bars,
 body #main nav .navigation ul li a .language,
 body #main nav .navigation ul li a .fa-moon {
   transform: translateY(-20px);
-  transition: 1s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 body #main nav .navigation ul li a .intro {
   transform: translateY(0px);
@@ -73,12 +73,12 @@ body #main .welcomeMessage .welcome .name {
   color: #469ae9;
 }
 body #main .wOne {
-  transition: all 1s;
+  transition: all 0.7s;
   transform: translateY(-50px);
   opacity: 0;
 }
 body #main .wTwo {
-  transition: all 1s;
+  transition: all 0.7s;
   transform: translateY(-50px);
   opacity: 0;
 }
@@ -88,12 +88,12 @@ body #main .presentation {
   font-size: 18px;
 }
 body #main .presentation .pOne {
-  transition: all 1s;
+  transition: all 0.7s;
   transform: translateY(-50px);
   opacity: 0;
 }
 body #main .presentation .pTwo {
-  transition: all 1s;
+  transition: all 0.7s;
   transform: translateY(-50px);
   opacity: 0;
 }
@@ -109,7 +109,7 @@ body #main .moreInfo {
   gap: 20px;
   transform: translateY(-50px);
   opacity: 0;
-  transition: all 1s;
+  transition: all 0.7s;
   font-size: 14px;
 }
 body #main .moreInfo .pContainer {

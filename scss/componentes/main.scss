@@ -21,11 +21,13 @@ body {
       .navigation {
         display: flex;
         justify-content: flex-end;
-        align-items: center;
+        // align-items: center;
         width: 50%;
+        // border: solid 1px red;
         ul {
           gap: 15px;
           display: flex;
+          align-items: center;
           li {
             a {
               color:$main;
@@ -33,7 +35,7 @@ body {
               .language,
               .fa-moon {
                 transform: translateY(-20px);
-                transition: 1s ease-in-out;
+                transition: 0.8s ease-in-out;
               }
 
               .intro {
@@ -66,12 +68,12 @@ body {
       }
     }
     .wOne {
-      transition: all 1s;
+      transition: all 0.7s;
       transform: translateY(-50px);
       opacity: 0;
     }
     .wTwo {
-      transition: all 1s;
+      transition: all 0.7s;
       transform: translateY(-50px);
       opacity: 0;
     }
@@ -80,12 +82,12 @@ body {
       margin-top: 10px;
       font-size: 18px;
       .pOne {
-        transition: all 1s;
+        transition: all 0.7s;
         transform: translateY(-50px);
         opacity: 0;
       }
       .pTwo {
-        transition: all 1s;
+        transition: all 0.7s;
         transform: translateY(-50px);
         opacity: 0;
       }
@@ -102,7 +104,7 @@ body {
       gap: 20px;
       transform: translateY(-50px);
       opacity: 0;
-      transition: all 1s;
+      transition: all 0.7s;
       font-size: 14px;
 
       .pContainer {
