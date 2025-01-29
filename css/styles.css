@@ -172,14 +172,21 @@ body #myProjects .listContainer {
 body #myProjects .listContainer .titleContainer {
   border-bottom: solid 2px #000000;
   padding-bottom: 5px;
+  transition: all 0.7s;
+  transform: translateY(-70px);
+  opacity: 0;
 }
-body #myProjects .listContainer .titleContainer h3 {
+body #myProjects .listContainer .titleContainer .workTitle {
   font-size: 50px;
   text-transform: uppercase;
 }
 body #myProjects .listContainer .listContent {
   width: 100%;
   height: 100%;
+}
+body #myProjects .listContainer .animation {
+  transform: translateY(0);
+  opacity: 1;
 }
 body .displayBlock {
   display: flex !important;

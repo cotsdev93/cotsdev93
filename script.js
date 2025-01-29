@@ -1,3 +1,5 @@
+///////////////////////////////////////////////////////////// main
+
 function mainAnimation() {
   const logo = document.querySelector(".logo");
   const language = document.querySelector(".language");
@@ -85,6 +87,8 @@ function reverseAnimation() {
   }, 400);
 }
 
+//////////////////////////////////////////////////////////// my projects
+
 const myProjectsInfo = document.querySelector(".myProjects");
 
 myProjectsInfo.addEventListener("click", () => {
@@ -92,10 +96,17 @@ myProjectsInfo.addEventListener("click", () => {
   const myProjects = document.getElementById("myProjects");
 
   reverseAnimation();
-  
+
   setTimeout(() => {
     main.classList.add("displayNone");
     myProjects.classList.add("displayBlock");
   }, 1000);
-
+  setTimeout(() => {
+    myProjectsAnimation();
+  }, 1100);
 });
+
+function myProjectsAnimation() {
+  const titleContainer = document.querySelector(".titleContainer");
+  titleContainer.classList.add("animation");
+}
