@@ -85,12 +85,17 @@ function reverseAnimation() {
   }, 400);
 }
 
-const myProjects = document.querySelector(".myProjects");
+const myProjectsInfo = document.querySelector(".myProjects");
 
-myProjects.addEventListener("click", () => {
-  reverseAnimation();
+myProjectsInfo.addEventListener("click", () => {
   const main = document.querySelector("#main");
+  const myProjects = document.getElementById("myProjects");
+
+  reverseAnimation();
+  
   setTimeout(() => {
-    main.classList.add("display");
-  }, 1200);
+    main.classList.add("displayNone");
+    myProjects.classList.add("displayBlock");
+  }, 1000);
+
 });

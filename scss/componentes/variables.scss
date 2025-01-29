@@ -1,6 +1,13 @@
 $main: #000000;
 $second: #469ae9;
 
+body {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
+}
 * {
     text-decoration: none;
     list-style: none;

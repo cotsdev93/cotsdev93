@@ -1,4 +1,12 @@
 @charset "UTF-8";
+body {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 * {
   text-decoration: none;
   list-style: none;
@@ -48,12 +56,6 @@ body nav .navigation ul li a .intro {
   transform: translateY(0px);
 }
 
-body {
-  height: 100vh;
-}
-body #main {
-  width: auto;
-}
 body #main .welcomeMessage {
   margin-top: 0px;
 }
@@ -146,8 +148,41 @@ body #main .intro {
   transform: translateY(0px);
   opacity: 1;
 }
-body .display {
+body .displayNone {
   display: none;
+}
+
+body #myProjects {
+  height: 100%;
+  display: flex;
+  flex-grow: 1;
+  display: none;
+}
+body #myProjects .previewContainer {
+  border: solid 0.1px black;
+  width: 50%;
+  border-radius: 0px 50px 0px 0px;
+}
+body #myProjects .listContainer {
+  width: 50%;
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+body #myProjects .listContainer .titleContainer {
+  border-bottom: solid 2px #000000;
+  padding-bottom: 5px;
+}
+body #myProjects .listContainer .titleContainer h3 {
+  font-size: 50px;
+  text-transform: uppercase;
+}
+body #myProjects .listContainer .listContent {
+  width: 100%;
+  height: 100%;
+}
+body .displayBlock {
+  display: flex !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

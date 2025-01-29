@@ -1,8 +1,5 @@
 body {
-  height: 100vh;
   #main {
-    width: auto;
-  
     .welcomeMessage {
       margin-top: 0px;
 
@@ -101,7 +98,7 @@ body {
       opacity: 1;
     }
   }
-  .display{
+  .displayNone{
     display: none;
   }
 }
