@@ -110,3 +110,5 @@ function myProjectsAnimation() {
   const titleContainer = document.querySelector(".titleContainer");
   titleContainer.classList.add("animation");
 }
+
+
