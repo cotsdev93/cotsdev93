@@ -159,7 +159,6 @@ body #myProjects {
   display: none;
 }
 body #myProjects .previewContainer {
-  border: solid 0.1px black;
   width: 50%;
   border-radius: 0px 50px 0px 0px;
 }
@@ -183,6 +182,9 @@ body #myProjects .listContainer .titleContainer .workTitle {
 body #myProjects .listContainer .listContent {
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transition: all 0.7s;
+  transform: translateY(-120px);
 }
 body #myProjects .listContainer .listContent a {
   width: 100%;
@@ -191,9 +193,13 @@ body #myProjects .listContainer .listContent a {
   display: flex;
   align-items: center;
   overflow: hidden;
+  color: #000000;
 }
 body #myProjects .listContainer .listContent a:hover .content {
   transform: translateX(0px);
+}
+body #myProjects .listContainer .listContent a:hover .previewContainer {
+  background-color: red;
 }
 body #myProjects .listContainer .listContent a .content {
   transform: translateX(-15px);
