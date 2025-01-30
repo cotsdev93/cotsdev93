@@ -161,6 +161,24 @@ body #myProjects {
 body #myProjects .previewContainer {
   width: 50%;
   border-radius: 0px 50px 0px 0px;
+  transition: opacity 1s, transform 1s;
+  opacity: 0;
+}
+body #myProjects .previewContainer.ganadera {
+  background-image: url(../assets/ganaderaArenales.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transform: background-image(50%);
+}
+body #myProjects .previewContainer.das {
+  background-image: url(../assets/dasService.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transform: background-image(50%);
 }
 body #myProjects .listContainer {
   width: 50%;
