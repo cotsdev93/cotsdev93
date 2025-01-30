@@ -108,29 +108,24 @@ function reverseMyProjectsAnimation() {
 
 //////////////////////////////////////////// more about me
 
-// Selecciona todos los enlaces dentro de .listContent
-const links = document.querySelectorAll(".listContent a");
-
-// Selecciona el contenedor .previewContainer
 const previewContainer = document.querySelector(".previewContainer");
 const ganadera = document.querySelector(".ganadera");
 const das = document.querySelector(".das")
 
 ganadera.addEventListener("mouseenter", () => {
-  previewContainer.classList.add("ganadera"); // Añade la clase hovered
-
+  previewContainer.classList.add("ganadera"); 
 });
 
 ganadera.addEventListener("mouseleave", () => {
-  previewContainer.classList.remove("ganadera"); // Remueve la clase hovered
+  previewContainer.classList.remove("ganadera"); 
 });
 
 das.addEventListener("mouseenter", () => {
-  previewContainer.classList.add("das"); // Añade la clase hovered
+  previewContainer.classList.add("das"); 
 
 });
 
 das.addEventListener("mouseleave", () => {
-  previewContainer.classList.remove("das"); // Remueve la clase hovered
+  previewContainer.classList.remove("das");
 });
 
