@@ -132,10 +132,9 @@ function hidePreview(className) {
   previewContainer.style.opacity = "0"; // Oculta con transición
   setTimeout(() => {
     previewContainer.classList.remove(className); // Quita la clase después de la transición
-  }, 50); // Coincide con la duración de la transición CSS
+  }, 50); 
 }
 
-// Eventos de hover con la nueva lógica
 ganadera.addEventListener("mouseenter", () => showPreview("ganadera"));
 ganadera.addEventListener("mouseleave", () => hidePreview("ganadera"));
 
@@ -145,10 +144,10 @@ das.addEventListener("mouseleave", () => hidePreview("das"));
 dres.addEventListener("mouseenter", () => showPreview("dres"));
 dres.addEventListener("mouseleave", () => hidePreview("dres"));
 
-// Manejo del evento cuando el usuario vuelve a la pestaña
+
 document.addEventListener("visibilitychange", () => {
   if (!document.hidden) {
-    // Si tiene alguna clase activa, asegurar que la opacidad sea 1
+  
     if (previewContainer.classList.contains("ganadera") || 
         previewContainer.classList.contains("das") || 
         previewContainer.classList.contains("dres")) {

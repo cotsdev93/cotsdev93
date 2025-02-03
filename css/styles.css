@@ -30,6 +30,10 @@ body nav .logoContainer .logo {
   transform: translateY(-20px);
   transition: 1s ease-in-out;
 }
+body nav .logoContainer .logo a {
+  text-decoration: none;
+  color: #000000;
+}
 body nav .logoContainer .intro {
   transform: translateY(0px);
 }
