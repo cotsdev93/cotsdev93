@@ -9,10 +9,6 @@ body {
         width: auto;
         transform: translateY(-20px);
         transition: 1s ease-in-out;
-        a {
-          text-decoration: none;
-          color: $main;
-        }
       }
       .intro {
         transform: translateY(0px);
@@ -41,6 +37,28 @@ body {
             .intro {
               transform: translateY(0px);
             }
+          }
+        }
+        .theme {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 20px;
+          position: relative;
+          height: 100%;
+
+          .fa-moon {
+            position: absolute;
+            cursor: pointer;
+            transition: all 1s;
+            top: 0;
+            left: 0;
+          }
+          .fa-sun {
+            position: absolute;
+            left: 0;
+            transition: all 1s;
+            top: 20px;
           }
         }
       }

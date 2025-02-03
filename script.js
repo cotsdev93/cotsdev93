@@ -22,6 +22,24 @@ logo.addEventListener("click", (event) => {
   }
 });
 
+///////////////////////////////////////////////////////////// Dark mode
+
+const moon = document.querySelector(".fa-moon");
+const sun = document.querySelector(".fa-sun");
+
+moon.addEventListener("click", (event) => {
+  event.preventDefault();
+  moon.style.transform = "translateY(-20px)";
+  sun.style.transform = "translateY(-20px)";
+  console.log("moon");
+});
+
+sun.addEventListener("click", (event) => {
+  event.preventDefault()
+  moon.style.transform = "translateY(0px)";
+  sun.style.transform = "translateY(0px)";
+});
+
 ///////////////////////////////////////////////////////////// main
 
 function mainAnimation() {
@@ -87,7 +105,7 @@ myProjectsInfo.addEventListener("click", () => {
   setTimeout(() => {
     main.classList.add("displayNone");
     myProjects.classList.add("displayBlock");
-    previewContainer.style.opacity = "1"
+    previewContainer.style.opacity = "1";
   }, 1000);
   setTimeout(() => {
     myProjectsAnimation();
@@ -132,7 +150,7 @@ function hidePreview(className) {
   previewContainer.style.opacity = "0"; // Oculta con transición
   setTimeout(() => {
     previewContainer.classList.remove(className); // Quita la clase después de la transición
-  }, 50); 
+  }, 50);
 }
 
 ganadera.addEventListener("mouseenter", () => showPreview("ganadera"));
@@ -144,18 +162,17 @@ das.addEventListener("mouseleave", () => hidePreview("das"));
 dres.addEventListener("mouseenter", () => showPreview("dres"));
 dres.addEventListener("mouseleave", () => hidePreview("dres"));
 
-
 document.addEventListener("visibilitychange", () => {
   if (!document.hidden) {
-  
-    if (previewContainer.classList.contains("ganadera") || 
-        previewContainer.classList.contains("das") || 
-        previewContainer.classList.contains("dres")) {
+    if (
+      previewContainer.classList.contains("ganadera") ||
+      previewContainer.classList.contains("das") ||
+      previewContainer.classList.contains("dres")
+    ) {
       previewContainer.style.opacity = "1";
     }
   }
 });
-
 
 /////////////////////////////////////////////// more about me
 

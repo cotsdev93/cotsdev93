@@ -30,10 +30,6 @@ body nav .logoContainer .logo {
   transform: translateY(-20px);
   transition: 1s ease-in-out;
 }
-body nav .logoContainer .logo a {
-  text-decoration: none;
-  color: #000000;
-}
 body nav .logoContainer .intro {
   transform: translateY(0px);
 }
@@ -58,6 +54,27 @@ body nav .navigation ul li a .fa-moon {
 }
 body nav .navigation ul li a .intro {
   transform: translateY(0px);
+}
+body nav .navigation ul .theme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  position: relative;
+  height: 100%;
+}
+body nav .navigation ul .theme .fa-moon {
+  position: absolute;
+  cursor: pointer;
+  transition: all 1s;
+  top: 0;
+  left: 0;
+}
+body nav .navigation ul .theme .fa-sun {
+  position: absolute;
+  left: 0;
+  transition: all 1s;
+  top: 20px;
 }
 
 body #main .welcomeMessage {
