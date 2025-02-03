@@ -87,6 +87,7 @@ myProjectsInfo.addEventListener("click", () => {
   setTimeout(() => {
     main.classList.add("displayNone");
     myProjects.classList.add("displayBlock");
+    previewContainer.style.opacity = "1"
   }, 1000);
   setTimeout(() => {
     myProjectsAnimation();
@@ -119,34 +120,41 @@ const ganadera = document.querySelector(".ganadera");
 const das = document.querySelector(".das");
 const dres = document.querySelector(".dres");
 
-// Eventos de hover para cada elemento (sin cambios)
-ganadera.addEventListener("mouseenter", () => {
-  previewContainer.classList.add("ganadera");
-});
-ganadera.addEventListener("mouseleave", () => {
-  previewContainer.classList.remove("ganadera");
-});
-
-das.addEventListener("mouseenter", () => {
-  previewContainer.classList.add("das");
-});
-das.addEventListener("mouseleave", () => {
-  previewContainer.classList.remove("das");
-});
-
-dres.addEventListener("mouseenter", () => {
-  previewContainer.classList.add("dres");
-});
-dres.addEventListener("mouseleave", () => {
-  previewContainer.classList.remove("dres");
-});
-
-// Nuevo evento: Cuando el mouse sale completamente del contenedor padre
-myProjects.addEventListener("mouseleave", () => {
-  previewContainer.style.opacity = "0"; // Se oculta suavemente
+// Función para manejar la transición con opacidad
+function showPreview(className) {
+  previewContainer.classList.add(className);
   setTimeout(() => {
-    previewContainer.className = "previewContainer"; // Se eliminan todas las clases después de la transición
-  }, 700); // El tiempo debe coincidir con la transición en CSS
+    previewContainer.style.opacity = "1"; // Hace visible la imagen con transición
+  }, 50); // Pequeño delay para asegurar fluidez
+}
+
+function hidePreview(className) {
+  previewContainer.style.opacity = "0"; // Oculta con transición
+  setTimeout(() => {
+    previewContainer.classList.remove(className); // Quita la clase después de la transición
+  }, 50); // Coincide con la duración de la transición CSS
+}
+
+// Eventos de hover con la nueva lógica
+ganadera.addEventListener("mouseenter", () => showPreview("ganadera"));
+ganadera.addEventListener("mouseleave", () => hidePreview("ganadera"));
+
+das.addEventListener("mouseenter", () => showPreview("das"));
+das.addEventListener("mouseleave", () => hidePreview("das"));
+
+dres.addEventListener("mouseenter", () => showPreview("dres"));
+dres.addEventListener("mouseleave", () => hidePreview("dres"));
+
+// Manejo del evento cuando el usuario vuelve a la pestaña
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) {
+    // Si tiene alguna clase activa, asegurar que la opacidad sea 1
+    if (previewContainer.classList.contains("ganadera") || 
+        previewContainer.classList.contains("das") || 
+        previewContainer.classList.contains("dres")) {
+      previewContainer.style.opacity = "1";
+    }
+  }
 });
 
 
