@@ -237,7 +237,6 @@ body {
 body #moreAboutMe {
   width: 100%;
   height: 100vh;
-  border: solid 5px red;
   position: absolute;
   display: none;
   z-index: -1;
@@ -245,18 +244,36 @@ body #moreAboutMe {
 body #moreAboutMe .mamAbout {
   width: 50%;
   height: 100%;
-  border: solid 5px green;
   transform: translateY(-100px);
   opacity: 0;
   transition: all 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #moreAboutMe .mamAbout .aboutContainer {
+  margin: 50px;
+}
+body #moreAboutMe .mamAbout .aboutContainer h3 {
+  font-size: 50px;
+  padding-bottom: 5px;
+}
+body #moreAboutMe .mamAbout .aboutContainer p {
+  border-top: 1px solid #000000;
+  padding-top: 15px;
 }
 body #moreAboutMe .mamCarrousel {
   width: 50%;
   height: 100%;
-  border: solid 5px blue;
   transform: translateY(-100px);
   opacity: 0;
   transition: all 1s;
+}
+body #moreAboutMe .mamCarrousel img {
+  width: 100%;
+  transform: translateY(-100px);
+  object-fit: cover;
+  opacity: 70%;
 }
 body #moreAboutMe .animation {
   transform: translateY(0px);

@@ -12,6 +12,14 @@ logo.addEventListener("click", (event) => {
       main.classList.remove("displayNone");
     }, 700);
   }
+  if (moreAboutMe.classList.contains("displayBlock")) {
+    console.log("funca");
+    reverseMoreAboutMeAnimation();
+    mainAnimation();
+    setTimeout(() => {
+      main.classList.remove("displayNone");
+    }, 700);
+  }
 });
 
 ///////////////////////////////////////////////////////////// main
@@ -149,4 +157,16 @@ function moreAboutMeAnimation() {
 
   mamAbout.classList.add("animation");
   mamCarrousel.classList.add("animation");
+}
+
+function reverseMoreAboutMeAnimation() {
+  const mamAbout = document.querySelector(".mamAbout");
+  const mamCarrousel = document.querySelector(".mamCarrousel");
+
+  mamAbout.classList.remove("animation");
+  mamCarrousel.classList.remove("animation");
+
+  setTimeout(() => {
+    moreAboutMe.classList.toggle("displayBlock");
+  }, 750);
 }
