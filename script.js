@@ -114,13 +114,15 @@ function reverseMyProjectsAnimation() {
 }
 
 const previewContainer = document.querySelector(".previewContainer");
+const myProjects = document.querySelector("#myProjects");
 const ganadera = document.querySelector(".ganadera");
 const das = document.querySelector(".das");
+const dres = document.querySelector(".dres");
 
+// Eventos de hover para cada elemento (sin cambios)
 ganadera.addEventListener("mouseenter", () => {
   previewContainer.classList.add("ganadera");
 });
-
 ganadera.addEventListener("mouseleave", () => {
   previewContainer.classList.remove("ganadera");
 });
@@ -128,10 +130,25 @@ ganadera.addEventListener("mouseleave", () => {
 das.addEventListener("mouseenter", () => {
   previewContainer.classList.add("das");
 });
-
 das.addEventListener("mouseleave", () => {
   previewContainer.classList.remove("das");
 });
+
+dres.addEventListener("mouseenter", () => {
+  previewContainer.classList.add("dres");
+});
+dres.addEventListener("mouseleave", () => {
+  previewContainer.classList.remove("dres");
+});
+
+// Nuevo evento: Cuando el mouse sale completamente del contenedor padre
+myProjects.addEventListener("mouseleave", () => {
+  previewContainer.style.opacity = "0"; // Se oculta suavemente
+  setTimeout(() => {
+    previewContainer.className = "previewContainer"; // Se eliminan todas las clases después de la transición
+  }, 700); // El tiempo debe coincidir con la transición en CSS
+});
+
 
 /////////////////////////////////////////////// more about me
 
@@ -156,7 +173,9 @@ function moreAboutMeAnimation() {
   const mamCarrousel = document.querySelector(".mamCarrousel");
 
   mamAbout.classList.add("animation");
-  mamCarrousel.classList.add("animation");
+  setTimeout(() => {
+    mamCarrousel.classList.add("animation");
+  }, 100);
 }
 
 function reverseMoreAboutMeAnimation() {
@@ -164,8 +183,9 @@ function reverseMoreAboutMeAnimation() {
   const mamCarrousel = document.querySelector(".mamCarrousel");
 
   mamAbout.classList.remove("animation");
-  mamCarrousel.classList.remove("animation");
-
+  setTimeout(() => {
+    mamCarrousel.classList.remove("animation");
+  }, 100);
   setTimeout(() => {
     moreAboutMe.classList.toggle("displayBlock");
   }, 750);

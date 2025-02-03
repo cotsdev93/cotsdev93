@@ -1,45 +1,45 @@
 body {
-    nav {
-        margin: 40px;
+  nav {
+    margin: 40px;
+    display: flex;
+    overflow: hidden;
+    .logoContainer {
+      width: 50%;
+      .logo {
+        width: auto;
+        transform: translateY(-20px);
+        transition: 1s ease-in-out;
+      }
+      .intro {
+        transform: translateY(0px);
+      }
+    }
+    .navigation {
+      display: flex;
+      justify-content: flex-end;
+      // align-items: center;
+      width: 50%;
+      // border: solid 1px red;
+      ul {
+        gap: 15px;
         display: flex;
-        overflow: hidden;
-        .logoContainer {
-          width: 50%;
-          .logo {
-            width: auto;
-            transform: translateY(-20px);
-            transition: 1s ease-in-out;
-          }
-          .intro {
-            transform: translateY(0px);
-          }
-        }
-        .navigation {
-          display: flex;
-          justify-content: flex-end;
-          // align-items: center;
-          width: 50%;
-          // border: solid 1px red;
-          ul {
-            gap: 15px;
-            display: flex;
-            align-items: center;
-            li {
-              a {
-                color:$main;
-                .fa-bars,
-                .language,
-                .fa-moon {
-                  transform: translateY(-20px);
-                  transition: 0.8s ease-in-out;
-                }
-  
-                .intro {
-                  transform: translateY(0px);
-                }
-              }
+        align-items: center;
+        li {
+          a {
+            color: $main;
+            .fa-bars,
+            .language,
+            .fa-moon {
+              transform: translateY(-20px);
+              transition: 0.8s ease-in-out;
+            }
+
+            .intro {
+              transform: translateY(0px);
             }
           }
         }
       }
+    }
+  }
 }
