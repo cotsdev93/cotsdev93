@@ -95,7 +95,6 @@ function myProjectsAnimation() {
 function reverseMyProjectsAnimation() {
   const titleContainer = document.querySelector(".titleContainer");
   const listContent = document.querySelector(".listContent");
-  const previewContainer = document.querySelector(".previewContainer");
   const myProjects = document.getElementById("myProjects");
 
   titleContainer.classList.remove("animation");
@@ -106,26 +105,48 @@ function reverseMyProjectsAnimation() {
   }, 750);
 }
 
-//////////////////////////////////////////// more about me
-
 const previewContainer = document.querySelector(".previewContainer");
 const ganadera = document.querySelector(".ganadera");
-const das = document.querySelector(".das")
+const das = document.querySelector(".das");
 
 ganadera.addEventListener("mouseenter", () => {
-  previewContainer.classList.add("ganadera"); 
+  previewContainer.classList.add("ganadera");
 });
 
 ganadera.addEventListener("mouseleave", () => {
-  previewContainer.classList.remove("ganadera"); 
+  previewContainer.classList.remove("ganadera");
 });
 
 das.addEventListener("mouseenter", () => {
-  previewContainer.classList.add("das"); 
-
+  previewContainer.classList.add("das");
 });
 
 das.addEventListener("mouseleave", () => {
   previewContainer.classList.remove("das");
 });
 
+/////////////////////////////////////////////// more about me
+
+const moreAboutMeInfo = document.querySelector(".moreAboutMe");
+const moreAboutMe = document.getElementById("moreAboutMe");
+
+moreAboutMeInfo.addEventListener("click", () => {
+  reverseAnimation();
+
+  setTimeout(() => {
+    main.classList.add("displayNone");
+    moreAboutMe.classList.add("displayBlock");
+  }, 1000);
+
+  setTimeout(() => {
+    moreAboutMeAnimation();
+  }, 1100);
+});
+
+function moreAboutMeAnimation() {
+  const mamAbout = document.querySelector(".mamAbout");
+  const mamCarrousel = document.querySelector(".mamCarrousel");
+
+  mamAbout.classList.add("animation");
+  mamCarrousel.classList.add("animation");
+}
