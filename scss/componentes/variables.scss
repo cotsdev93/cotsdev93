@@ -1,12 +1,22 @@
+$background: #efefef;
 $main: #000000;
 $second: #469ae9;
+
+$backgroundMoon: #474747;
+$mainMoon: #c9c5c5;
+$secondMoon: #cee53a;
 
 body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  background-color: $background;
+  transition: all 1s;
+}
+.moon {
+  background-color: $backgroundMoon
 }
 * {
     text-decoration: none;

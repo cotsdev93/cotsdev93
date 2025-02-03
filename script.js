@@ -26,18 +26,20 @@ logo.addEventListener("click", (event) => {
 
 const moon = document.querySelector(".fa-moon");
 const sun = document.querySelector(".fa-sun");
+const body = document.querySelector("body")
 
 moon.addEventListener("click", (event) => {
   event.preventDefault();
   moon.style.transform = "translateY(-20px)";
   sun.style.transform = "translateY(-20px)";
-  console.log("moon");
+  body.classList.add("moon")
 });
 
 sun.addEventListener("click", (event) => {
   event.preventDefault()
   moon.style.transform = "translateY(0px)";
   sun.style.transform = "translateY(0px)";
+  body.classList.remove("moon")
 });
 
 ///////////////////////////////////////////////////////////// main
@@ -142,14 +144,14 @@ const dres = document.querySelector(".dres");
 function showPreview(className) {
   previewContainer.classList.add(className);
   setTimeout(() => {
-    previewContainer.style.opacity = "1"; // Hace visible la imagen con transición
-  }, 50); // Pequeño delay para asegurar fluidez
+    previewContainer.style.opacity = "1"; 
+  }, 50); 
 }
 
 function hidePreview(className) {
-  previewContainer.style.opacity = "0"; // Oculta con transición
+  previewContainer.style.opacity = "0"; 
   setTimeout(() => {
-    previewContainer.classList.remove(className); // Quita la clase después de la transición
+    previewContainer.classList.remove(className); 
   }, 50);
 }
 

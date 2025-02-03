@@ -44,10 +44,12 @@ body {
         transition: all 0.7s;
         transform: translateY(-50px);
         opacity: 0;
+        color: $main;
       }
       .intro {
         transform: translateY(0px);
         opacity: 1;
+        color: $main;
       }
     }
     .moreInfo {
@@ -65,17 +67,18 @@ body {
         display: flex;
         align-items: center;
         gap: 5px;
-        position: relative; /* Necesario para posicionar el pseudo-elemento */
-        cursor: pointer; /* Cambia el cursor al pasar sobre el contenedor */
-        padding-bottom: 2px; /* Espacio para el subrayado */
-      
-        /* Estilos del texto dentro del contenedor */
+        position: relative;
+        cursor: pointer; 
+        padding-bottom: 2px; 
+        i {
+          color: $main;
+        }
         p {
           font-size: 14px;
-          text-decoration: none; /* Elimina el subrayado por defecto */
+          text-decoration: none;
+          color: $main;
         }
-      
-        /* Pseudo-elemento para el subrayado */
+
         &::after {
           content: '';
           position: absolute;
@@ -86,8 +89,7 @@ body {
           background-color: $main; /* Color del subrayado */
           transition: width 0.6s ease; /* Animación de la anchura */
         }
-      
-        /* Efecto al hacer hover en el contenedor */
+    
         &:hover::after {
           width: 100%; /* Ancho completo al hacer hover */
         }

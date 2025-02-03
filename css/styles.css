@@ -5,6 +5,12 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+  background-color: #efefef;
+  transition: all 1s;
+}
+
+.moon {
+  background-color: #474747;
 }
 
 * {
@@ -29,6 +35,13 @@ body nav .logoContainer .logo {
   width: auto;
   transform: translateY(-20px);
   transition: 1s ease-in-out;
+}
+body nav .logoContainer .logo .logoM {
+  text-decoration: none;
+  color: #000000;
+}
+body nav .logoContainer .logo .moon {
+  color: #c9c5c5;
 }
 body nav .logoContainer .intro {
   transform: translateY(0px);
@@ -66,14 +79,14 @@ body nav .navigation ul .theme {
 body nav .navigation ul .theme .fa-moon {
   position: absolute;
   cursor: pointer;
-  transition: all 1s;
+  transition: all 0.5s;
   top: 0;
   left: 0;
 }
 body nav .navigation ul .theme .fa-sun {
   position: absolute;
   left: 0;
-  transition: all 1s;
+  transition: all 0.5s;
   top: 20px;
 }
 
@@ -121,10 +134,12 @@ body #main .presentation .pTwo {
   transition: all 0.7s;
   transform: translateY(-50px);
   opacity: 0;
+  color: #000000;
 }
 body #main .presentation .intro {
   transform: translateY(0px);
   opacity: 1;
+  color: #000000;
 }
 body #main .moreInfo {
   margin-top: 20px;
@@ -141,16 +156,17 @@ body #main .moreInfo .pContainer {
   display: flex;
   align-items: center;
   gap: 5px;
-  position: relative; /* Necesario para posicionar el pseudo-elemento */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el contenedor */
-  padding-bottom: 2px; /* Espacio para el subrayado */
-  /* Estilos del texto dentro del contenedor */
-  /* Pseudo-elemento para el subrayado */
-  /* Efecto al hacer hover en el contenedor */
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 2px;
+}
+body #main .moreInfo .pContainer i {
+  color: #000000;
 }
 body #main .moreInfo .pContainer p {
   font-size: 14px;
-  text-decoration: none; /* Elimina el subrayado por defecto */
+  text-decoration: none;
+  color: #000000;
 }
 body #main .moreInfo .pContainer::after {
   content: "";
