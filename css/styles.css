@@ -147,11 +147,18 @@ body #main .presentation .pOne {
   transform: translateY(-50px);
   opacity: 0;
 }
+body #main .presentation .moon {
+  background-color: transparent;
+  color: #c9c5c5 !important;
+}
 body #main .presentation .pTwo {
   transition: all 0.7s;
   transform: translateY(-50px);
   opacity: 0;
   color: #000000;
+}
+body #main .presentation .pText {
+  transition: all 0.7s ease-in-out;
 }
 body #main .presentation .intro {
   transform: translateY(0px);
