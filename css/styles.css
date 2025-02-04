@@ -61,7 +61,7 @@ body nav .navigation ul li a {
 }
 body nav .navigation ul li a .fa-bars,
 body nav .navigation ul li a .language,
-body nav .navigation ul li a .fa-moon {
+body nav .navigation ul li a .theme {
   transform: translateY(-20px);
   transition: 0.8s ease-in-out;
 }
@@ -75,6 +75,8 @@ body nav .navigation ul .theme {
   width: 20px;
   position: relative;
   height: 100%;
+  transform: translateY(-20px);
+  transition: all 1s;
 }
 body nav .navigation ul .theme .fa-moon {
   position: absolute;
@@ -88,6 +90,10 @@ body nav .navigation ul .theme .fa-sun {
   left: 0;
   transition: all 0.5s;
   top: 20px;
+  opacity: 0;
+}
+body nav .navigation ul .intro {
+  transform: translateY(0px);
 }
 
 body #main .welcomeMessage {

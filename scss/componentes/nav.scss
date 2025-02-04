@@ -34,7 +34,7 @@ body {
             color: $main;
             .fa-bars,
             .language,
-            .fa-moon {
+            .theme {
               transform: translateY(-20px);
               transition: 0.8s ease-in-out;
             }
@@ -51,7 +51,8 @@ body {
           width: 20px;
           position: relative;
           height: 100%;
-
+          transform: translateY(-20px);
+          transition: all 1s;
           .fa-moon {
             position: absolute;
             cursor: pointer;
@@ -64,7 +65,11 @@ body {
             left: 0;
             transition: all 0.5s;
             top: 20px;
+            opacity: 0;
           }
+        }
+        .intro {
+          transform: translateY(0px);
         }
       }
     }

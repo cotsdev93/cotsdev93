@@ -33,6 +33,7 @@ moon.addEventListener("click", (event) => {
   moon.style.transform = "translateY(-20px)";
   sun.style.transform = "translateY(-20px)";
   body.classList.add("moon")
+  sun.style.opacity = "1"
 });
 
 sun.addEventListener("click", (event) => {
@@ -49,7 +50,7 @@ function mainAnimation() {
     { selector: ".logo", delay: 0 },
     { selector: ".fa-bars", delay: 300 },
     { selector: ".language", delay: 700 },
-    { selector: ".fa-moon", delay: 1000 },
+    { selector: ".theme", delay: 1000 },
     { selector: ".moreInfo", delay: 1300 },
     { selector: ".presentation", delay: 1300 },
     { selector: ".wOne", delay: 1800 },
@@ -80,7 +81,7 @@ function reverseAnimation() {
     { selector: ".pOne", delay: 200 },
     { selector: ".wTwo", delay: 100 },
     { selector: ".wOne", delay: 0 },
-    { selector: ".fa-moon", delay: 300 },
+    { selector: ".theme", delay: 300 },
     { selector: ".language", delay: 400 },
   ];
 
