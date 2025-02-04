@@ -26,22 +26,37 @@ logo.addEventListener("click", (event) => {
 
 const moon = document.querySelector(".fa-moon");
 const sun = document.querySelector(".fa-sun");
-const body = document.querySelector("body")
+const body = document.querySelector("body");
+const language = document.querySelector(".language");
+const welcomeText = document.querySelectorAll(".welcomeText");
 
 moon.addEventListener("click", (event) => {
   event.preventDefault();
   moon.style.transform = "translateY(-20px)";
   sun.style.transform = "translateY(-20px)";
-  body.classList.add("moon")
-  sun.style.opacity = "1"
+  body.classList.add("moon");
+  sun.style.opacity = "1";
+  logo.classList.add("moon");
+  language.classList.add("moon");
+
+  welcomeText.forEach((element) => {
+    element.classList.add("moon");
+  });
 });
 
 sun.addEventListener("click", (event) => {
-  event.preventDefault()
+  event.preventDefault();
   moon.style.transform = "translateY(0px)";
   sun.style.transform = "translateY(0px)";
-  body.classList.remove("moon")
+  body.classList.remove("moon");
+  logo.classList.remove("moon");
+  language.classList.remove("moon");
+
+  welcomeText.forEach((element) => {
+    element.classList.remove("moon");
+  });
 });
+
 
 ///////////////////////////////////////////////////////////// main
 
@@ -141,7 +156,6 @@ const ganadera = document.querySelector(".ganadera");
 const das = document.querySelector(".das");
 const dres = document.querySelector(".dres");
 
-// Función para manejar la transición con opacidad
 function showPreview(className) {
   previewContainer.classList.add(className);
   setTimeout(() => {

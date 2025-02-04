@@ -12,9 +12,14 @@ body {
         font-size: 30px;
         font-weight: 600;
         .welcomeText {
+          transition: all 0.7s ease-in-out;
           color: transparent; /* Hace el relleno del texto transparente */
           -webkit-text-stroke: 1px $main; /* Borde de 2px de ancho y color negro */
           letter-spacing: 2px;
+        }
+        .moon {
+          -webkit-text-stroke: 1px $mainMoon;
+          background-color: transparent;
         }
         .name {
           color: $second;
@@ -25,6 +30,7 @@ body {
       transition: all 0.7s;
       transform: translateY(-50px);
       opacity: 0;
+      
     }
     .wTwo {
       transition: all 0.7s;
@@ -68,8 +74,8 @@ body {
         align-items: center;
         gap: 5px;
         position: relative;
-        cursor: pointer; 
-        padding-bottom: 2px; 
+        cursor: pointer;
+        padding-bottom: 2px;
         i {
           color: $main;
         }
@@ -80,7 +86,7 @@ body {
         }
 
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           left: 0;
           bottom: 0; /* Posición del subrayado */
@@ -89,7 +95,7 @@ body {
           background-color: $main; /* Color del subrayado */
           transition: width 0.6s ease; /* Animación de la anchura */
         }
-    
+
         &:hover::after {
           width: 100%; /* Ancho completo al hacer hover */
         }
@@ -100,7 +106,7 @@ body {
       opacity: 1;
     }
   }
-  .displayNone{
+  .displayNone {
     display: none;
   }
 }

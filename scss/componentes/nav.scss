@@ -8,14 +8,11 @@ body {
       .logo {
         width: auto;
         transform: translateY(-20px);
-        transition: 1s ease-in-out;
-        .logoM {
-          text-decoration: none;
-          color: $main;
-        }
-        .moon {
-          color: $mainMoon;
-        }
+        transition: 0.7s;
+        background-color: transparent;
+      }
+      .moon {
+        color: $mainMoon;
       }
       .intro {
         transform: translateY(0px);
@@ -37,6 +34,19 @@ body {
             .theme {
               transform: translateY(-20px);
               transition: 0.8s ease-in-out;
+              // background-color: transparent;
+            }
+
+            .language {
+              background-color: transparent;
+            }
+
+            .fa-sun {
+              color: $mainMoon
+            }
+
+            .moon {
+              color: $mainMoon;
             }
 
             .intro {

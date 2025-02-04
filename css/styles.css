@@ -34,13 +34,10 @@ body nav .logoContainer {
 body nav .logoContainer .logo {
   width: auto;
   transform: translateY(-20px);
-  transition: 1s ease-in-out;
+  transition: 0.7s;
+  background-color: transparent;
 }
-body nav .logoContainer .logo .logoM {
-  text-decoration: none;
-  color: #000000;
-}
-body nav .logoContainer .logo .moon {
+body nav .logoContainer .moon {
   color: #c9c5c5;
 }
 body nav .logoContainer .intro {
@@ -64,6 +61,15 @@ body nav .navigation ul li a .language,
 body nav .navigation ul li a .theme {
   transform: translateY(-20px);
   transition: 0.8s ease-in-out;
+}
+body nav .navigation ul li a .language {
+  background-color: transparent;
+}
+body nav .navigation ul li a .fa-sun {
+  color: #c9c5c5;
+}
+body nav .navigation ul li a .moon {
+  color: #c9c5c5;
 }
 body nav .navigation ul li a .intro {
   transform: translateY(0px);
@@ -109,9 +115,14 @@ body #main .welcomeMessage .welcome {
   font-weight: 600;
 }
 body #main .welcomeMessage .welcome .welcomeText {
+  transition: all 0.7s ease-in-out;
   color: transparent; /* Hace el relleno del texto transparente */
   -webkit-text-stroke: 1px #000000; /* Borde de 2px de ancho y color negro */
   letter-spacing: 2px;
+}
+body #main .welcomeMessage .welcome .moon {
+  -webkit-text-stroke: 1px #c9c5c5;
+  background-color: transparent;
 }
 body #main .welcomeMessage .welcome .name {
   color: #469ae9;
