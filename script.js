@@ -32,7 +32,8 @@ const welcomeText = document.querySelectorAll(".welcomeText");
 const pText = document.querySelectorAll(".pText")
 const arrow = document.querySelectorAll(".fa-arrow-right")
 const mamText = document.querySelectorAll(".mamText")
-
+const titleContainer = document.querySelector(".titleContainer")
+const mpLinks = document.querySelectorAll(".mpLinks")
 moon.addEventListener("click", (event) => {
   event.preventDefault();
   moon.style.transform = "translateY(-20px)";
@@ -53,6 +54,10 @@ moon.addEventListener("click", (event) => {
     element.classList.add("moon")
   })
   mamText.forEach((element)=>{
+    element.classList.add("moon")
+  })
+  titleContainer.classList.add("moon")
+  mpLinks.forEach((element)=> {
     element.classList.add("moon")
   })
 });

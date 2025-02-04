@@ -266,6 +266,9 @@ body #myProjects .listContainer .titleContainer .workTitle {
   font-size: 50px;
   text-transform: uppercase;
 }
+body #myProjects .listContainer .moon {
+  border-bottom: solid 2px #c9c5c5;
+}
 body #myProjects .listContainer .listContent {
   width: 100%;
   height: 100%;
@@ -273,7 +276,7 @@ body #myProjects .listContainer .listContent {
   transition: all 0.7s;
   transform: translateY(-120px);
 }
-body #myProjects .listContainer .listContent a {
+body #myProjects .listContainer .listContent .mpLinks {
   width: 100%;
   height: 80px;
   border-bottom: solid 1px #000000;
@@ -282,12 +285,16 @@ body #myProjects .listContainer .listContent a {
   overflow: hidden;
   color: #000000;
 }
-body #myProjects .listContainer .listContent a:hover .content {
+body #myProjects .listContainer .listContent .mpLinks:hover .content {
   transform: translateX(0px);
 }
-body #myProjects .listContainer .listContent a .content {
+body #myProjects .listContainer .listContent .mpLinks .content {
   transform: translateX(-15px);
   transition: 0.4s;
+}
+body #myProjects .listContainer .listContent .moon {
+  color: #c9c5c5;
+  border-bottom: solid 1px #c9c5c5;
 }
 body #myProjects .listContainer .animation {
   transform: translateY(0);
