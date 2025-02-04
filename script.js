@@ -30,6 +30,8 @@ const body = document.querySelector("body");
 const language = document.querySelector(".language");
 const welcomeText = document.querySelectorAll(".welcomeText");
 const pText = document.querySelectorAll(".pText")
+const arrow = document.querySelectorAll(".fa-arrow-right")
+const mamText = document.querySelectorAll(".mamText")
 
 moon.addEventListener("click", (event) => {
   event.preventDefault();
@@ -46,6 +48,12 @@ moon.addEventListener("click", (event) => {
 
   pText.forEach((element)=>{
     element.classList.add("moon");
+  })
+  arrow.forEach((element)=>{
+    element.classList.add("moon")
+  })
+  mamText.forEach((element)=>{
+    element.classList.add("moon")
   })
 });
 
@@ -64,6 +72,14 @@ sun.addEventListener("click", (event) => {
   
   pText.forEach((element)=>{
     element.classList.remove("moon");
+  })
+
+  arrow.forEach((element)=>{
+    element.classList.remove("moon")
+  })
+
+  mamText.forEach((element)=>{
+    element.classList.remove("moon")
   })
 });
 

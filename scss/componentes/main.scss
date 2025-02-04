@@ -11,61 +11,58 @@ body {
         margin: 3px;
         font-size: 30px;
         font-weight: 600;
+
         .welcomeText {
           transition: all 0.7s ease-in-out;
           color: transparent; /* Hace el relleno del texto transparente */
           -webkit-text-stroke: 1px $main; /* Borde de 2px de ancho y color negro */
           letter-spacing: 2px;
         }
+
         .moon {
           -webkit-text-stroke: 1px $mainMoon;
           background-color: transparent;
         }
+
         .name {
           color: $second;
         }
       }
     }
-    .wOne {
-      transition: all 0.7s;
-      transform: translateY(-50px);
-      opacity: 0;
-      
-    }
-    .wTwo {
+
+    .wOne, .wTwo {
       transition: all 0.7s;
       transform: translateY(-50px);
       opacity: 0;
     }
+
     .presentation {
       text-align: center;
       margin-top: 10px;
       font-size: 18px;
-      .pOne {
+
+      .pOne, .pTwo {
         transition: all 0.7s;
         transform: translateY(-50px);
         opacity: 0;
-        // background-color: red;
       }
+
       .moon {
         background-color: transparent;
-        color: $mainMoon !important
+        color: $mainMoon !important;
       }
-      .pTwo {
-        transition: all 0.7s;
-        transform: translateY(-50px);
-        opacity: 0;
-        color: $main;
-      }
-      .pText{
+
+      .pText {
         transition: all 0.7s ease-in-out;
       }
+
       .intro {
         transform: translateY(0px);
         opacity: 1;
         color: $main;
       }
     }
+
     .moreInfo {
       margin-top: 20px;
       display: flex;
@@ -84,13 +81,23 @@ body {
         position: relative;
         cursor: pointer;
         padding-bottom: 2px;
-        i {
+
+        .fa-arrow-right {
           color: $main;
+          background-color: transparent;
+          transition: all 1s ease-in-out;
         }
-        p {
+
+        .mamText {
           font-size: 14px;
           text-decoration: none;
           color: $main;
+          background-color: transparent;
+          transition: all 1s ease-in-out;
+        }
+
+        .moon {
+          color: $mainMoon;
         }
 
         &::after {
@@ -101,7 +108,7 @@ body {
           width: 0; /* Inicialmente sin anchura */
           height: 1.5px; /* Grosor del subrayado */
           background-color: $main; /* Color del subrayado */
-          transition: width 0.6s ease; /* Animación de la anchura */
+          transition: width 0.6s ease, background-color 0.3s ease;
         }
 
         &:hover::after {
@@ -109,12 +116,21 @@ body {
         }
       }
     }
+
     .intro {
       transform: translateY(0px);
       opacity: 1;
     }
   }
+
   .displayNone {
     display: none;
+  }
+
+  /* 🔹 Modo oscuro: cambiar color del subrayado en hover */
+  &.moon {
+    .pContainer::after {
+      background-color: $mainMoon !important;
+    }
   }
 }

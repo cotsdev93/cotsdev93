@@ -102,6 +102,9 @@ body nav .navigation ul .intro {
   transform: translateY(0px);
 }
 
+body {
+  /* 🔹 Modo oscuro: cambiar color del subrayado en hover */
+}
 body #main .welcomeMessage {
   margin-top: 0px;
 }
@@ -127,12 +130,7 @@ body #main .welcomeMessage .welcome .moon {
 body #main .welcomeMessage .welcome .name {
   color: #469ae9;
 }
-body #main .wOne {
-  transition: all 0.7s;
-  transform: translateY(-50px);
-  opacity: 0;
-}
-body #main .wTwo {
+body #main .wOne, body #main .wTwo {
   transition: all 0.7s;
   transform: translateY(-50px);
   opacity: 0;
@@ -142,7 +140,7 @@ body #main .presentation {
   margin-top: 10px;
   font-size: 18px;
 }
-body #main .presentation .pOne {
+body #main .presentation .pOne, body #main .presentation .pTwo {
   transition: all 0.7s;
   transform: translateY(-50px);
   opacity: 0;
@@ -150,12 +148,6 @@ body #main .presentation .pOne {
 body #main .presentation .moon {
   background-color: transparent;
   color: #c9c5c5 !important;
-}
-body #main .presentation .pTwo {
-  transition: all 0.7s;
-  transform: translateY(-50px);
-  opacity: 0;
-  color: #000000;
 }
 body #main .presentation .pText {
   transition: all 0.7s ease-in-out;
@@ -184,13 +176,20 @@ body #main .moreInfo .pContainer {
   cursor: pointer;
   padding-bottom: 2px;
 }
-body #main .moreInfo .pContainer i {
+body #main .moreInfo .pContainer .fa-arrow-right {
   color: #000000;
+  background-color: transparent;
+  transition: all 1s ease-in-out;
 }
-body #main .moreInfo .pContainer p {
+body #main .moreInfo .pContainer .mamText {
   font-size: 14px;
   text-decoration: none;
   color: #000000;
+  background-color: transparent;
+  transition: all 1s ease-in-out;
+}
+body #main .moreInfo .pContainer .moon {
+  color: #c9c5c5;
 }
 body #main .moreInfo .pContainer::after {
   content: "";
@@ -200,7 +199,7 @@ body #main .moreInfo .pContainer::after {
   width: 0; /* Inicialmente sin anchura */
   height: 1.5px; /* Grosor del subrayado */
   background-color: #000000; /* Color del subrayado */
-  transition: width 0.6s ease; /* Animación de la anchura */
+  transition: width 0.6s ease, background-color 0.3s ease;
 }
 body #main .moreInfo .pContainer:hover::after {
   width: 100%; /* Ancho completo al hacer hover */
@@ -211,6 +210,9 @@ body #main .intro {
 }
 body .displayNone {
   display: none;
+}
+body.moon .pContainer::after {
+  background-color: #c9c5c5 !important;
 }
 
 body #myProjects {
