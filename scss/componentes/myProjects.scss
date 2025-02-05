@@ -4,15 +4,16 @@ body {
     display: flex;
     flex-grow: 1;
     display: none;
+
     .previewContainer {
       width: 50%;
       border-radius: 0px 50px 0px 0px;
       transition: opacity 0.7s ease-in-out, background-image 0.5s ease-in-out;
       opacity: 0; /* Se inicia oculta */
       pointer-events: none; /* Para evitar interacción no deseada cuando está oculta */
-    
+
       &.ganadera {
-        background-image: url(../assets/ganaderaArenales.jpg );
+        background-image: url(../assets/ganaderaArenales.jpg);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -52,8 +53,14 @@ body {
         .workTitle {
           font-size: 50px;
           text-transform: uppercase;
+          color: $main;
+          background-color: transparent;
+        }
+        .moon {
+          color: $mainMoon !important;
         }
       }
+
       .moon {
         border-bottom: solid 2px $mainMoon;
       }
@@ -100,5 +107,10 @@ body {
 
   .displayBlock {
     display: flex !important;
+  }
+
+  /* Corrección para asegurar que el color cambia */
+  .moon .workTitle {
+    color: $mainMoon !important;
   }
 }

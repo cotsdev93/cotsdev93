@@ -215,6 +215,9 @@ body.moon .pContainer::after {
   background-color: #c9c5c5 !important;
 }
 
+body {
+  /* Corrección para asegurar que el color cambia */
+}
 body #myProjects {
   height: 100%;
   display: flex;
@@ -265,6 +268,11 @@ body #myProjects .listContainer .titleContainer {
 body #myProjects .listContainer .titleContainer .workTitle {
   font-size: 50px;
   text-transform: uppercase;
+  color: #000000;
+  background-color: transparent;
+}
+body #myProjects .listContainer .titleContainer .moon {
+  color: #c9c5c5 !important;
 }
 body #myProjects .listContainer .moon {
   border-bottom: solid 2px #c9c5c5;
@@ -302,6 +310,9 @@ body #myProjects .listContainer .animation {
 }
 body .displayBlock {
   display: flex !important;
+}
+body .moon .workTitle {
+  color: #c9c5c5 !important;
 }
 
 body {

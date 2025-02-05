@@ -29,11 +29,13 @@ const sun = document.querySelector(".fa-sun");
 const body = document.querySelector("body");
 const language = document.querySelector(".language");
 const welcomeText = document.querySelectorAll(".welcomeText");
-const pText = document.querySelectorAll(".pText")
-const arrow = document.querySelectorAll(".fa-arrow-right")
-const mamText = document.querySelectorAll(".mamText")
-const titleContainer = document.querySelector(".titleContainer")
-const mpLinks = document.querySelectorAll(".mpLinks")
+const pText = document.querySelectorAll(".pText");
+const arrow = document.querySelectorAll(".fa-arrow-right");
+const mamText = document.querySelectorAll(".mamText");
+const titleContainer = document.querySelector(".titleContainer");
+const mpLinks = document.querySelectorAll(".mpLinks");
+const workTitle = document.querySelector(".workTitle");
+
 moon.addEventListener("click", (event) => {
   event.preventDefault();
   moon.style.transform = "translateY(-20px)";
@@ -47,19 +49,19 @@ moon.addEventListener("click", (event) => {
     element.classList.add("moon");
   });
 
-  pText.forEach((element)=>{
+  pText.forEach((element) => {
     element.classList.add("moon");
-  })
+  });
   arrow.forEach((element)=>{
     element.classList.add("moon")
   })
-  mamText.forEach((element)=>{
-    element.classList.add("moon")
-  })
-  titleContainer.classList.add("moon")
-  mpLinks.forEach((element)=> {
-    element.classList.add("moon")
-  })
+  mamText.forEach((element) => {
+    element.classList.add("moon");
+  });
+  titleContainer.classList.add("moon");
+  mpLinks.forEach((element) => {
+    element.classList.add("moon");
+  });
 });
 
 sun.addEventListener("click", (event) => {
@@ -69,25 +71,28 @@ sun.addEventListener("click", (event) => {
   body.classList.remove("moon");
   logo.classList.remove("moon");
   language.classList.remove("moon");
-
+  sun.style.opacity = "0"
   welcomeText.forEach((element) => {
     element.classList.remove("moon");
   });
 
-  
-  pText.forEach((element)=>{
+  pText.forEach((element) => {
     element.classList.remove("moon");
-  })
+  });
 
-  arrow.forEach((element)=>{
-    element.classList.remove("moon")
-  })
+  arrow.forEach((element) => {
+    element.classList.remove("moon");
+  });
 
-  mamText.forEach((element)=>{
-    element.classList.remove("moon")
-  })
+  mamText.forEach((element) => {
+    element.classList.remove("moon");
+  });
+
+  mpLinks.forEach((element) => {
+    element.classList.remove("moon");
+  });
+  titleContainer.classList.remove("moon");
 });
-
 
 ///////////////////////////////////////////////////////////// main
 
@@ -190,25 +195,25 @@ const dres = document.querySelector(".dres");
 function showPreview(className) {
   previewContainer.classList.add(className);
   setTimeout(() => {
-    previewContainer.style.opacity = "1"; 
-  }, 50); 
-}
-
-function hidePreview(className) {
-  previewContainer.style.opacity = "0"; 
-  setTimeout(() => {
-    previewContainer.classList.remove(className); 
+    previewContainer.style.opacity = "1";
   }, 50);
 }
 
-ganadera.addEventListener("mouseenter", () => showPreview("ganadera"));
-ganadera.addEventListener("mouseleave", () => hidePreview("ganadera"));
+function hidePreview(className) {
+  previewContainer.style.opacity = "0";
+  setTimeout(() => {
+    previewContainer.classList.remove(className);
+  }, 50);
+}
 
-das.addEventListener("mouseenter", () => showPreview("das"));
-das.addEventListener("mouseleave", () => hidePreview("das"));
+// ganadera.addEventListener("mouseenter", () => showPreview("ganadera"));
+// ganadera.addEventListener("mouseleave", () => hidePreview("ganadera"));
 
-dres.addEventListener("mouseenter", () => showPreview("dres"));
-dres.addEventListener("mouseleave", () => hidePreview("dres"));
+// das.addEventListener("mouseenter", () => showPreview("das"));
+// das.addEventListener("mouseleave", () => hidePreview("das"));
+
+// dres.addEventListener("mouseenter", () => showPreview("dres"));
+// dres.addEventListener("mouseleave", () => hidePreview("dres"));
 
 document.addEventListener("visibilitychange", () => {
   if (!document.hidden) {
