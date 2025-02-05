@@ -10,7 +10,7 @@ logo.addEventListener("click", (event) => {
     mainAnimation();
     setTimeout(() => {
       main.classList.remove("displayNone");
-    }, 950);
+    }, 1500);
   }
   if (moreAboutMe.classList.contains("displayBlock")) {
     console.log("funca");
@@ -102,12 +102,12 @@ function mainAnimation() {
     { selector: ".fa-bars", delay: 300 },
     { selector: ".language", delay: 700 },
     { selector: ".theme", delay: 1000 },
-    { selector: ".moreInfo", delay: 1300 },
-    { selector: ".presentation", delay: 1300 },
-    { selector: ".wOne", delay: 1800 },
-    { selector: ".wTwo", delay: 1700 },
-    { selector: ".pOne", delay: 1600 },
-    { selector: ".pTwo", delay: 1500 },
+    { selector: ".moreInfo", delay: 1600 },
+    { selector: ".presentation", delay: 1650 },
+    { selector: ".pTwo", delay: 1700 },
+    { selector: ".pOne", delay: 1900 },
+    { selector: ".wTwo", delay: 2100 },
+    { selector: ".wOne", delay: 2300 },
   ];
 
   elementsWithDelays.forEach(({ selector, delay }) => {
@@ -124,14 +124,14 @@ mainAnimation();
 
 function reverseAnimation() {
   const elementsWithDelays = [
-    { selector: ".pTwo", delay: 700 },
+    { selector: ".wOne", delay: 0 },
+    { selector: ".wTwo", delay: 100 },
     { selector: ".pOne", delay: 600 },
+    { selector: ".pTwo", delay: 700 },
     { selector: ".moreInfo", delay: 500 },
     { selector: ".presentation", delay: 400 },
     { selector: ".pTwo", delay: 300 },
     { selector: ".pOne", delay: 200 },
-    { selector: ".wTwo", delay: 100 },
-    { selector: ".wOne", delay: 0 },
     { selector: ".theme", delay: 300 },
     { selector: ".language", delay: 400 },
   ];
