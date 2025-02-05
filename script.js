@@ -10,7 +10,7 @@ logo.addEventListener("click", (event) => {
     mainAnimation();
     setTimeout(() => {
       main.classList.remove("displayNone");
-    }, 700);
+    }, 950);
   }
   if (moreAboutMe.classList.contains("displayBlock")) {
     console.log("funca");
@@ -52,9 +52,9 @@ moon.addEventListener("click", (event) => {
   pText.forEach((element) => {
     element.classList.add("moon");
   });
-  arrow.forEach((element)=>{
-    element.classList.add("moon")
-  })
+  arrow.forEach((element) => {
+    element.classList.add("moon");
+  });
   mamText.forEach((element) => {
     element.classList.add("moon");
   });
@@ -71,7 +71,7 @@ sun.addEventListener("click", (event) => {
   body.classList.remove("moon");
   logo.classList.remove("moon");
   language.classList.remove("moon");
-  sun.style.opacity = "0"
+  sun.style.opacity = "0";
   welcomeText.forEach((element) => {
     element.classList.remove("moon");
   });
@@ -168,22 +168,47 @@ myProjectsInfo.addEventListener("click", () => {
 
 function myProjectsAnimation() {
   const titleContainer = document.querySelector(".titleContainer");
-  const listContent = document.querySelector(".listContent");
-  titleContainer.classList.add("animation");
-  listContent.classList.add("animation");
+  const mpLinksGanadera = document.querySelector(".mpLinksGanadera");
+  const mpLinksDas = document.querySelector(".mpLinksDas");
+  const mpLinksDres = document.querySelector(".mpLinksDres");
+
+  setTimeout(() => {
+    titleContainer.classList.add("animation");
+  }, 800);
+  setTimeout(() => {
+    mpLinksGanadera.classList.add("animation");
+  }, 600);
+  setTimeout(() => {
+    mpLinksDas.classList.add("animation");
+  }, 400);
+  setTimeout(() => {
+    mpLinksDres.classList.add("animation");
+  }, 200);
 }
 
 function reverseMyProjectsAnimation() {
   const titleContainer = document.querySelector(".titleContainer");
-  const listContent = document.querySelector(".listContent");
   const myProjects = document.getElementById("myProjects");
-
-  titleContainer.classList.remove("animation");
-  listContent.classList.remove("animation");
+  const mpLinksGanadera = document.querySelector(".mpLinksGanadera");
+  const mpLinksDas = document.querySelector(".mpLinksDas");
+  const mpLinksDres = document.querySelector(".mpLinksDres");
+  
+  setTimeout(() => {
+    titleContainer.classList.remove("animation");
+  }, 200);
+  setTimeout(() => {
+    mpLinksGanadera.classList.remove("animation");
+  }, 400);
+  setTimeout(() => {
+    mpLinksDas.classList.remove("animation");
+  }, 600);
+  setTimeout(() => {
+    mpLinksDres.classList.remove("animation");
+  }, 800);
 
   setTimeout(() => {
     myProjects.classList.toggle("displayBlock");
-  }, 750);
+  }, 950);
 }
 
 const previewContainer = document.querySelector(".previewContainer");

@@ -47,7 +47,7 @@ body {
         border-bottom: solid 2px $main;
         padding-bottom: 5px;
         transition: all 0.7s;
-        transform: translateY(-70px);
+        transform: translateY(-120px);
         opacity: 0;
 
         .workTitle {
@@ -68,19 +68,19 @@ body {
       .listContent {
         width: 100%;
         height: 100%;
-        opacity: 0;
+        // opacity: 0;
         transition: all 0.7s;
-        transform: translateY(-120px);
+        // transform: translateY(-120px);
 
         .mpLinks {
           width: 100%;
           height: 80px;
-          border-bottom: solid 1px $main;
           display: flex;
           align-items: center;
           overflow: hidden;
           color: $main;
-
+          border-bottom: solid 1px $main;
+          opacity: 0;
           &:hover {
             .content {
               transform: translateX(0px);
@@ -92,9 +92,27 @@ body {
             transition: 0.4s;
           }
         }
+        .mpLinksGanadera {
+          transition: all 1s;
+          opacity: 0;
+          transform: translateY(-120px);
+        }
+        .mpLinksDas {
+          transition: all 1s;
+          transform: translateY(-120px);
+          opacity: 0;
+        }
+        .mpLinksDres {
+          transition: all 1s;
+          transform: translateY(-120px); opacity: 0;
+        }
         .moon {
           color: $mainMoon;
           border-bottom: solid 1px $mainMoon;
+        }
+        .animation {
+          transform: translateY(0);
+          opacity: 1;
         }
       }
 

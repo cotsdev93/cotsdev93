@@ -262,7 +262,7 @@ body #myProjects .listContainer .titleContainer {
   border-bottom: solid 2px #000000;
   padding-bottom: 5px;
   transition: all 0.7s;
-  transform: translateY(-70px);
+  transform: translateY(-120px);
   opacity: 0;
 }
 body #myProjects .listContainer .titleContainer .workTitle {
@@ -280,18 +280,17 @@ body #myProjects .listContainer .moon {
 body #myProjects .listContainer .listContent {
   width: 100%;
   height: 100%;
-  opacity: 0;
   transition: all 0.7s;
-  transform: translateY(-120px);
 }
 body #myProjects .listContainer .listContent .mpLinks {
   width: 100%;
   height: 80px;
-  border-bottom: solid 1px #000000;
   display: flex;
   align-items: center;
   overflow: hidden;
   color: #000000;
+  border-bottom: solid 1px #000000;
+  opacity: 0;
 }
 body #myProjects .listContainer .listContent .mpLinks:hover .content {
   transform: translateX(0px);
@@ -300,9 +299,28 @@ body #myProjects .listContainer .listContent .mpLinks .content {
   transform: translateX(-15px);
   transition: 0.4s;
 }
+body #myProjects .listContainer .listContent .mpLinksGanadera {
+  transition: all 1s;
+  opacity: 0;
+  transform: translateY(-120px);
+}
+body #myProjects .listContainer .listContent .mpLinksDas {
+  transition: all 1s;
+  transform: translateY(-120px);
+  opacity: 0;
+}
+body #myProjects .listContainer .listContent .mpLinksDres {
+  transition: all 1s;
+  transform: translateY(-120px);
+  opacity: 0;
+}
 body #myProjects .listContainer .listContent .moon {
   color: #c9c5c5;
   border-bottom: solid 1px #c9c5c5;
+}
+body #myProjects .listContainer .listContent .animation {
+  transform: translateY(0);
+  opacity: 1;
 }
 body #myProjects .listContainer .animation {
   transform: translateY(0);
