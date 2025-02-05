@@ -18,7 +18,7 @@ logo.addEventListener("click", (event) => {
     mainAnimation();
     setTimeout(() => {
       main.classList.remove("displayNone");
-    }, 700);
+    }, 1100);
   }
 });
 
@@ -97,6 +97,7 @@ sun.addEventListener("click", (event) => {
 ///////////////////////////////////////////////////////////// main
 
 function mainAnimation() {
+  const logo = document.querySelector(".logo")
   const elementsWithDelays = [
     { selector: ".logo", delay: 0 },
     { selector: ".fa-bars", delay: 300 },
@@ -118,6 +119,10 @@ function mainAnimation() {
       }, delay);
     }
   });
+
+  if(logo.classList.contains("translateY(0px)")) {
+    console.log("funca")
+  }
 }
 
 mainAnimation();
@@ -201,14 +206,14 @@ function reverseMyProjectsAnimation() {
   }, 400);
   setTimeout(() => {
     mpLinksDas.classList.remove("animation");
-  }, 600);
+  }, 500);
   setTimeout(() => {
     mpLinksDres.classList.remove("animation");
-  }, 800);
+  }, 600);
 
   setTimeout(() => {
     myProjects.classList.toggle("displayBlock");
-  }, 950);
+  }, 1200);
 }
 
 const previewContainer = document.querySelector(".previewContainer");
@@ -240,17 +245,17 @@ function hidePreview(className) {
 // dres.addEventListener("mouseenter", () => showPreview("dres"));
 // dres.addEventListener("mouseleave", () => hidePreview("dres"));
 
-document.addEventListener("visibilitychange", () => {
-  if (!document.hidden) {
-    if (
-      previewContainer.classList.contains("ganadera") ||
-      previewContainer.classList.contains("das") ||
-      previewContainer.classList.contains("dres")
-    ) {
-      previewContainer.style.opacity = "1";
-    }
-  }
-});
+// document.addEventListener("visibilitychange", () => {
+//   if (!document.hidden) {
+//     if (
+//       previewContainer.classList.contains("ganadera") ||
+//       previewContainer.classList.contains("das") ||
+//       previewContainer.classList.contains("dres")
+//     ) {
+//       previewContainer.style.opacity = "1";
+//     }
+//   }
+// });
 
 /////////////////////////////////////////////// more about me
 
