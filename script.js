@@ -10,7 +10,7 @@ logo.addEventListener("click", (event) => {
     mainAnimation();
     setTimeout(() => {
       main.classList.remove("displayNone");
-    }, 1500);
+    }, 1800);
   }
   if (moreAboutMe.classList.contains("displayBlock")) {
     console.log("funca");
@@ -102,12 +102,12 @@ function mainAnimation() {
     { selector: ".fa-bars", delay: 300 },
     { selector: ".language", delay: 700 },
     { selector: ".theme", delay: 1000 },
-    { selector: ".moreInfo", delay: 1600 },
-    { selector: ".presentation", delay: 1650 },
-    { selector: ".pTwo", delay: 1700 },
-    { selector: ".pOne", delay: 1900 },
-    { selector: ".wTwo", delay: 2100 },
-    { selector: ".wOne", delay: 2300 },
+    { selector: ".moreInfo", delay: 1850 },
+    { selector: ".presentation", delay: 2000 },
+    { selector: ".pTwo", delay: 2200 },
+    { selector: ".pOne", delay: 2400 },
+    { selector: ".wTwo", delay: 2600 },
+    { selector: ".wOne", delay: 2800 },
   ];
 
   elementsWithDelays.forEach(({ selector, delay }) => {
@@ -192,7 +192,7 @@ function reverseMyProjectsAnimation() {
   const mpLinksGanadera = document.querySelector(".mpLinksGanadera");
   const mpLinksDas = document.querySelector(".mpLinksDas");
   const mpLinksDres = document.querySelector(".mpLinksDres");
-  
+
   setTimeout(() => {
     titleContainer.classList.remove("animation");
   }, 200);
@@ -273,22 +273,33 @@ moreAboutMeInfo.addEventListener("click", () => {
 function moreAboutMeAnimation() {
   const mamAbout = document.querySelector(".mamAbout");
   const mamCarrousel = document.querySelector(".mamCarrousel");
-
+  const textAbout = document.querySelector(".textAbout");
+  const titleAbout = document.querySelector(".titleAbout");
   mamAbout.classList.add("animation");
+
+  setTimeout(() => {
+    titleAbout.classList.add("animation");
+  }, 800);
+  setTimeout(() => {
+    textAbout.classList.add("animation");
+  }, 600);
   setTimeout(() => {
     mamCarrousel.classList.add("animation");
-  }, 100);
+  }, 400);
 }
 
 function reverseMoreAboutMeAnimation() {
   const mamAbout = document.querySelector(".mamAbout");
   const mamCarrousel = document.querySelector(".mamCarrousel");
-
-  mamAbout.classList.remove("animation");
+  const textAbout = document.querySelector(".textAbout");
+  const titleAbout = document.querySelector(".titleAbout");
+  setTimeout(() => {
+    titleAbout.classList.remove("animation");
+  }, 200);
+  setTimeout(() => {
+    textAbout.classList.remove("animation");
+  }, 400);
   setTimeout(() => {
     mamCarrousel.classList.remove("animation");
-  }, 100);
-  setTimeout(() => {
-    moreAboutMe.classList.toggle("displayBlock");
-  }, 750);
+  }, 600);
 }

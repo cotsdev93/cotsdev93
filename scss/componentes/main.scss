@@ -13,7 +13,7 @@ body {
         font-weight: 600;
 
         .welcomeText {
-          transition: all 0.7s ease-in-out;
+          transition: all 0.5s ease-in-out;
           color: transparent; /* Hace el relleno del texto transparente */
           -webkit-text-stroke: 1px $main; /* Borde de 2px de ancho y color negro */
           letter-spacing: 2px;
@@ -31,7 +31,7 @@ body {
     }
 
     .wOne, .wTwo {
-      transition: all 0.7s;
+      transition: all 0.5s;
       transform: translateY(-50px);
       opacity: 0;
     }
@@ -42,7 +42,7 @@ body {
       font-size: 18px;
 
       .pOne, .pTwo {
-        transition: all 0.7s;
+        transition: all 0.5s;
         transform: translateY(-50px);
         opacity: 0;
       }
@@ -53,7 +53,7 @@ body {
       }
 
       .pText {
-        transition: all 0.7s ease-in-out;
+        transition: all 0.5s ease-in-out;
       }
 
       .intro {
@@ -71,7 +71,7 @@ body {
       gap: 20px;
       transform: translateY(-50px);
       opacity: 0;
-      transition: all 0.7s;
+      transition: all 0.5s;
       font-size: 14px;
 
       .pContainer {
