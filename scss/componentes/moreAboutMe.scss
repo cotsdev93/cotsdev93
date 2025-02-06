@@ -9,8 +9,6 @@ body {
     .mamAbout {
       width: 50%;
       height: 100%;
-
-
       display: flex;
       justify-content: center;
       align-items: center;
@@ -24,6 +22,8 @@ body {
           transition: all 1s;
           transform: translateY(-100px);
           opacity: 0;
+          color: red;
+          background-color: transparent;
         }
         .textAbout {
           padding-top: 15px;
@@ -34,6 +34,13 @@ body {
         .animation {
           transform: translateY(0px);
           opacity: 1;
+        }
+        .moon {
+          color: $mainMoon;
+          border-bottom: 1px solid $mainMoon;
+        }
+        .moonText {
+          color: $mainMoon;
         }
       }
     }

@@ -35,6 +35,8 @@ const mamText = document.querySelectorAll(".mamText");
 const titleContainer = document.querySelector(".titleContainer");
 const mpLinks = document.querySelectorAll(".mpLinks");
 const workTitle = document.querySelector(".workTitle");
+const titleAbout = document.querySelector(".titleAbout");
+const textAbout = document.querySelector(".textAbout");
 
 moon.addEventListener("click", (event) => {
   event.preventDefault();
@@ -62,6 +64,9 @@ moon.addEventListener("click", (event) => {
   mpLinks.forEach((element) => {
     element.classList.add("moon");
   });
+
+  titleAbout.classList.add("moon");
+  textAbout.classList.add("moonText");
 });
 
 sun.addEventListener("click", (event) => {
@@ -92,12 +97,15 @@ sun.addEventListener("click", (event) => {
     element.classList.remove("moon");
   });
   titleContainer.classList.remove("moon");
+
+  titleAbout.classList.remove("moon");
+  textAbout.classList.remove("moonText");
 });
 
 ///////////////////////////////////////////////////////////// main
 
 function mainAnimation() {
-  const logo = document.querySelector(".logo")
+  const logo = document.querySelector(".logo");
   const elementsWithDelays = [
     { selector: ".logo", delay: 0 },
     { selector: ".fa-bars", delay: 300 },
@@ -120,8 +128,8 @@ function mainAnimation() {
     }
   });
 
-  if(logo.classList.contains("translateY(0px)")) {
-    console.log("funca")
+  if (logo.classList.contains("translateY(0px)")) {
+    console.log("funca");
   }
 }
 
@@ -164,7 +172,7 @@ myProjectsInfo.addEventListener("click", () => {
   setTimeout(() => {
     main.classList.add("displayNone");
     myProjects.classList.add("displayBlock");
-    previewContainer.style.opacity = "1";
+    // previewContainer.style.opacity = "1";
   }, 1000);
   setTimeout(() => {
     myProjectsAnimation();
@@ -176,6 +184,7 @@ function myProjectsAnimation() {
   const mpLinksGanadera = document.querySelector(".mpLinksGanadera");
   const mpLinksDas = document.querySelector(".mpLinksDas");
   const mpLinksDres = document.querySelector(".mpLinksDres");
+  const previewContainer = document.querySelector(".previewContainer");
 
   setTimeout(() => {
     titleContainer.classList.add("animation");
@@ -215,47 +224,6 @@ function reverseMyProjectsAnimation() {
     myProjects.classList.toggle("displayBlock");
   }, 1200);
 }
-
-const previewContainer = document.querySelector(".previewContainer");
-const myProjects = document.querySelector("#myProjects");
-const ganadera = document.querySelector(".ganadera");
-const das = document.querySelector(".das");
-const dres = document.querySelector(".dres");
-
-function showPreview(className) {
-  previewContainer.classList.add(className);
-  setTimeout(() => {
-    previewContainer.style.opacity = "1";
-  }, 50);
-}
-
-function hidePreview(className) {
-  previewContainer.style.opacity = "0";
-  setTimeout(() => {
-    previewContainer.classList.remove(className);
-  }, 50);
-}
-
-// ganadera.addEventListener("mouseenter", () => showPreview("ganadera"));
-// ganadera.addEventListener("mouseleave", () => hidePreview("ganadera"));
-
-// das.addEventListener("mouseenter", () => showPreview("das"));
-// das.addEventListener("mouseleave", () => hidePreview("das"));
-
-// dres.addEventListener("mouseenter", () => showPreview("dres"));
-// dres.addEventListener("mouseleave", () => hidePreview("dres"));
-
-// document.addEventListener("visibilitychange", () => {
-//   if (!document.hidden) {
-//     if (
-//       previewContainer.classList.contains("ganadera") ||
-//       previewContainer.classList.contains("das") ||
-//       previewContainer.classList.contains("dres")
-//     ) {
-//       previewContainer.style.opacity = "1";
-//     }
-//   }
-// });
 
 /////////////////////////////////////////////// more about me
 

@@ -7,12 +7,15 @@ body {
 
     .previewContainer {
       width: 50%;
+      border: solid 1px red;
       border-radius: 0px 50px 0px 0px;
       transition: opacity 0.7s ease-in-out, background-image 0.5s ease-in-out;
-      opacity: 0; /* Se inicia oculta */
       pointer-events: none; /* Para evitar interacción no deseada cuando está oculta */
+      background-color: red;
+      opacity: 0; /* Se inicia oculta */
 
-      &.ganadera {
+      /* Cambios para mostrar la imagen de fondo al hacer hover */
+      .mpLinksGanadera:hover ~ & {
         background-image: url(../assets/ganaderaArenales.jpg);
         background-size: cover;
         background-position: center;
@@ -20,7 +23,7 @@ body {
         opacity: 1;
       }
 
-      &.das {
+      .mpLinksDas:hover ~ & {
         background-image: url(../assets/dasService.jpg);
         background-size: cover;
         background-position: center;
@@ -28,7 +31,7 @@ body {
         opacity: 1;
       }
 
-      &.dres {
+      .mpLinksDres:hover ~ & {
         background-image: url(../assets/dresOrlandi.jpg);
         background-size: cover;
         background-position: center;
@@ -56,6 +59,7 @@ body {
           color: $main;
           background-color: transparent;
         }
+
         .moon {
           color: $mainMoon !important;
         }
@@ -68,6 +72,7 @@ body {
       .listContent {
         width: 100%;
         height: 100%;
+
         .mpLinks {
           width: 100%;
           height: 80px;
@@ -77,6 +82,7 @@ body {
           color: $main;
           border-bottom: solid 1px $main;
           opacity: 0;
+
           &:hover {
             .content {
               transform: translateX(0px);
@@ -88,24 +94,20 @@ body {
             transition: 0.4s;
           }
         }
-        .mpLinksGanadera {
-          transition: all 0.6s;
-          opacity: 0;
-          transform: translateY(-120px);
-        }
-        .mpLinksDas {
-          transition: all 0.6s;
-          transform: translateY(-120px);
-          opacity: 0;
-        }
+
+        .mpLinksGanadera,
+        .mpLinksDas,
         .mpLinksDres {
           transition: all 0.6s;
-          transform: translateY(-120px); opacity: 0;
+          opacity: 0;
+          transform: translateY(-120px);
         }
+
         .moon {
           color: $mainMoon;
           border-bottom: solid 1px $mainMoon;
         }
+
         .animation {
           transform: translateY(0);
           opacity: 1;
@@ -123,7 +125,7 @@ body {
     display: flex !important;
   }
 
-  /* Corrección para asegurar que el color cambia */
+  /* Corrección para asegurar que el color cambia en modo oscuro */
   .moon .workTitle {
     color: $mainMoon !important;
   }
