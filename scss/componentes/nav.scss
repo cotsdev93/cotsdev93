@@ -11,6 +11,7 @@ body {
         transition: 0.7s;
         background-color: transparent;
         cursor: pointer;
+        color: $main;
       }
       .moon {
         color: $mainMoon;
@@ -43,7 +44,7 @@ body {
             }
 
             .fa-sun {
-              color: $mainMoon
+              color: $mainMoon;
             }
 
             .moon {

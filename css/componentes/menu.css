@@ -1,0 +1,23 @@
+body #menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  border: solid 1px red;
+}
+body #menu .menuContainer {
+  width: 200px;
+  height: 200px;
+  border: solid 5px red;
+}
+body #menu .menuContainer ul li {
+  color: red;
+}
+body #menu .menuContainer .networks {
+  border: solid 1px red;
+}
+body .displayBlock {
+  display: flex !important;
+}
+
+/*# sourceMappingURL=menu.css.map */

@@ -1,0 +1,25 @@
+body {
+  #menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    border: solid 1px red;
+    .menuContainer {
+      width: 200px;
+      height: 200px;
+      border: solid 5px red;
+      ul {
+        li {
+          color: red;
+        }
+      }
+      .networks{
+        border: solid 1px red;
+      }
+    }
+  }
+  .displayBlock {
+    display: flex !important;
+  }
+}

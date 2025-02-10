@@ -102,6 +102,23 @@ sun.addEventListener("click", (event) => {
   textAbout.classList.remove("moonText");
 });
 
+///////////////////////////////////////////////////////////// menu
+
+const menu = document.querySelector(".fa-bars")
+const menuMain = document.getElementById("menu")
+
+menu.addEventListener("click", (event)=>{
+  event.preventDefault()
+  reverseAnimation()
+  setTimeout(() => {
+    main.classList.add("displayNone")
+  }, 700);
+  setTimeout(() => {
+    menuMain.classList.add("displayBlock")
+  }, 800);
+  console.log("funca")
+} )
+
 ///////////////////////////////////////////////////////////// main
 
 function mainAnimation() {

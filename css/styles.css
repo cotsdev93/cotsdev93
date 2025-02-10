@@ -37,6 +37,7 @@ body nav .logoContainer .logo {
   transition: 0.7s;
   background-color: transparent;
   cursor: pointer;
+  color: #c17878;
 }
 body nav .logoContainer .moon {
   color: #c9c5c5;
@@ -55,7 +56,7 @@ body nav .navigation ul {
   align-items: center;
 }
 body nav .navigation ul li a {
-  color: #000000;
+  color: #c17878;
 }
 body nav .navigation ul li a .fa-bars,
 body nav .navigation ul li a .language,
@@ -121,7 +122,7 @@ body #main .welcomeMessage .welcome {
 body #main .welcomeMessage .welcome .welcomeText {
   transition: all 0.5s ease-in-out;
   color: transparent; /* Hace el relleno del texto transparente */
-  -webkit-text-stroke: 1px #000000; /* Borde de 2px de ancho y color negro */
+  -webkit-text-stroke: 1px #c17878; /* Borde de 2px de ancho y color negro */
   letter-spacing: 2px;
 }
 body #main .welcomeMessage .welcome .moon {
@@ -156,7 +157,7 @@ body #main .presentation .pText {
 body #main .presentation .intro {
   transform: translateY(0px);
   opacity: 1;
-  color: #000000;
+  color: #c17878;
 }
 body #main .moreInfo {
   margin-top: 20px;
@@ -178,14 +179,14 @@ body #main .moreInfo .pContainer {
   padding-bottom: 2px;
 }
 body #main .moreInfo .pContainer .fa-arrow-right {
-  color: #000000;
+  color: #c17878;
   background-color: transparent;
   transition: all 1s ease-in-out;
 }
 body #main .moreInfo .pContainer .mamText {
   font-size: 14px;
   text-decoration: none;
-  color: #000000;
+  color: #c17878;
   background-color: transparent;
   transition: all 1s ease-in-out;
 }
@@ -199,7 +200,7 @@ body #main .moreInfo .pContainer::after {
   bottom: 0; /* Posición del subrayado */
   width: 0; /* Inicialmente sin anchura */
   height: 1.5px; /* Grosor del subrayado */
-  background-color: #000000; /* Color del subrayado */
+  background-color: #c17878; /* Color del subrayado */
   transition: width 0.6s ease, background-color 0.3s ease;
 }
 body #main .moreInfo .pContainer:hover::after {
@@ -263,7 +264,7 @@ body #myProjects .listContainer {
   flex-direction: column;
 }
 body #myProjects .listContainer .titleContainer {
-  border-bottom: solid 2px #000000;
+  border-bottom: solid 2px #c17878;
   padding-bottom: 5px;
   transition: all 0.7s;
   transform: translateY(-120px);
@@ -272,7 +273,7 @@ body #myProjects .listContainer .titleContainer {
 body #myProjects .listContainer .titleContainer .workTitle {
   font-size: 50px;
   text-transform: uppercase;
-  color: #000000;
+  color: #c17878;
   background-color: transparent;
 }
 body #myProjects .listContainer .titleContainer .moon {
@@ -291,8 +292,8 @@ body #myProjects .listContainer .listContent .mpLinks {
   display: flex;
   align-items: center;
   overflow: hidden;
-  color: #000000;
-  border-bottom: solid 1px #000000;
+  color: #c17878;
+  border-bottom: solid 1px #c17878;
   opacity: 0;
 }
 body #myProjects .listContainer .listContent .mpLinks:hover .content {
@@ -351,11 +352,11 @@ body #moreAboutMe .mamAbout .aboutContainer {
 body #moreAboutMe .mamAbout .aboutContainer .titleAbout {
   font-size: 50px;
   padding-bottom: 5px;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid #c17878;
   transition: all 1s;
   transform: translateY(-100px);
   opacity: 0;
-  color: red;
+  color: #c17878;
   background-color: transparent;
 }
 body #moreAboutMe .mamAbout .aboutContainer .textAbout {
@@ -363,6 +364,7 @@ body #moreAboutMe .mamAbout .aboutContainer .textAbout {
   transition: all 1s;
   transform: translateY(-100px);
   opacity: 0;
+  color: #c17878;
 }
 body #moreAboutMe .mamAbout .aboutContainer .animation {
   transform: translateY(0px);
@@ -394,6 +396,28 @@ body #moreAboutMe .animation {
 }
 body .displayBlock {
   display: flex;
+}
+
+body #menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  border: solid 1px red;
+}
+body #menu .menuContainer {
+  width: 200px;
+  height: 200px;
+  border: solid 5px red;
+}
+body #menu .menuContainer ul li {
+  color: red;
+}
+body #menu .menuContainer .networks {
+  border: solid 1px red;
+}
+body .displayBlock {
+  display: flex !important;
 }
 
 /*# sourceMappingURL=styles.css.map */
