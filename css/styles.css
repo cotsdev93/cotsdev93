@@ -403,18 +403,36 @@ body #menu {
   justify-content: center;
   align-items: center;
   display: none;
-  border: solid 1px red;
 }
 body #menu .menuContainer {
   width: 200px;
   height: 200px;
-  border: solid 5px red;
+}
+body #menu .menuContainer ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 body #menu .menuContainer ul li {
-  color: red;
+  font-size: 40px;
+  margin: 5px;
+  border: solid 1px #ff0000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+body #menu .menuContainer ul li p {
+  transform: translateY(-30px);
 }
 body #menu .menuContainer .networks {
-  border: solid 1px red;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+body #menu .menuContainer .networks a {
+  display: flex;
+  gap: 5px;
 }
 body .displayBlock {
   display: flex !important;

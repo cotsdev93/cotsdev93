@@ -115,9 +115,17 @@ menu.addEventListener("click", (event)=>{
   }, 700);
   setTimeout(() => {
     menuMain.classList.add("displayBlock")
+    setTimeout(() => {
+      menuAnimation()
+    }, 100);
   }, 800);
   console.log("funca")
 } )
+
+function menuAnimation() {
+  console.log("SI")
+  }
+
 
 ///////////////////////////////////////////////////////////// main
 

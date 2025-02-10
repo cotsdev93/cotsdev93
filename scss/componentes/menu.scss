@@ -4,18 +4,37 @@ body {
     justify-content: center;
     align-items: center;
     display: none;
-    border: solid 1px red;
     .menuContainer {
       width: 200px;
       height: 200px;
-      border: solid 5px red;
       ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      
         li {
-          color: red;
+          font-size: 40px;
+          margin: 5px;
+          border: solid 1px #ff0000;
+          display: flex;  // Asegura que los elementos internos estén en la misma línea
+          align-items: center; // Alinea verticalmente el span y el p
+          gap: 10px; // Espaciado entre span y p
+          overflow: hidden;
+          p {
+            transform: translateY(-30px);
+
+          }
         }
       }
-      .networks{
-        border: solid 1px red;
+      
+      .networks {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-around;
+        a {
+          display: flex;
+          gap: 5px;
+        }
       }
     }
   }
