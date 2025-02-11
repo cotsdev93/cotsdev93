@@ -1,55 +1,17 @@
-body #menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: none;
-}
-body #menu .menuContainer {
-  width: 200px;
-  height: 200px;
-}
-body #menu .menuContainer ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-body #menu .menuContainer ul li {
-  font-size: 40px;
-  margin: 5px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  overflow: hidden;
-  transition: all 0.5s;
-}
-body #menu .menuContainer ul li p {
-  transform: translateY(-30px);
-  opacity: 0;
-  transition: all 0.5s;
-}
-body #menu .menuContainer ul li .animation {
-  transform: translateY(0px);
-  opacity: 1;
-}
-body #menu .menuContainer .networks {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-around;
-  overflow: hidden;
-  transition: all 0.5s;
-}
-body #menu .menuContainer .networks a {
-  transition: all 0.5s;
-  transform: translateY(-20px);
-  display: flex;
-  gap: 5px;
-}
-body #menu .menuContainer .networks .animation {
-  transform: translateY(0px);
-  opacity: 1;
-}
-body .displayBlock {
-  display: flex !important;
-}
+/* Error: Undefined variable.
+ *    ,
+ * 27 |             color: $main;
+ *    |                    ^^^^^
+ *    '
+ *   scss\componentes\menu.scss 27:20  root stylesheet */
 
-/*# sourceMappingURL=menu.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 27 \2502              color: $main;\d\a    \2502                     ^^^^^\a    \2575 \a   scss\\componentes\\menu.scss 27:20  root stylesheet";
+}

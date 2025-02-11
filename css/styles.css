@@ -426,6 +426,7 @@ body #menu .menuContainer ul li p {
   transform: translateY(-30px);
   opacity: 0;
   transition: all 0.5s;
+  color: #c17878;
 }
 body #menu .menuContainer ul li .animation {
   transform: translateY(0px);

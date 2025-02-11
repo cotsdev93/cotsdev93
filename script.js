@@ -123,7 +123,7 @@ menu.addEventListener("click", (event) => {
         console.log("va")
         mainAnimation()
       }, 100);
-    }, 1000);
+    }, 900);
   } else {
     event.preventDefault();
     reverseAnimation();
