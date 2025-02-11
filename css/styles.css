@@ -457,14 +457,18 @@ body #menu .menuContainer .networks a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 7px; /* Posición del subrayado */
+  bottom: 7px;
   width: 0; /* Inicialmente sin anchura */
-  height: 1px; /* Grosor del subrayado */
+  height: 1.5px; /* Grosor del subrayado */
   background-color: #c17878; /* Color del subrayado */
   transition: width 0.6s ease, background-color 0.3s ease;
+  border-radius: 5px;
 }
 body #menu .menuContainer .networks a:hover::after {
   width: 100%; /* Ancho completo al hacer hover */
+}
+body #menu .menuContainer .networks .moon {
+  color: #c9c5c5;
 }
 body #menu .menuContainer .networks .animation {
   transform: translateY(0px);
