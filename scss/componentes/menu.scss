@@ -39,12 +39,30 @@ body {
         justify-content: space-around;
         overflow: hidden;
         transition: all 0.5s;
+        // border: solid 1px red;
+        height: 25px;
         a {
           transition: all 0.5s;
           transform: translateY(-20px);
           display: flex;
           gap: 5px;
+          color: $main;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 7px; /* Posición del subrayado */
+            width: 0; /* Inicialmente sin anchura */
+            height: 1px; /* Grosor del subrayado */
+            background-color: $main; /* Color del subrayado */
+            transition: width 0.6s ease, background-color 0.3s ease;
+          }
+  
+          &:hover::after {
+            width: 100%; /* Ancho completo al hacer hover */
+          }
         }
+        
         .animation {
           transform: translateY(0px);
           opacity: 1;

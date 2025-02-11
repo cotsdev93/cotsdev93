@@ -104,9 +104,6 @@ body nav .navigation ul .intro {
   transform: translateY(0px);
 }
 
-body {
-  /* 🔹 Modo oscuro: cambiar color del subrayado en hover */
-}
 body #main .welcomeMessage {
   margin-top: 0px;
 }
@@ -212,9 +209,6 @@ body #main .intro {
 }
 body .displayNone {
   display: none;
-}
-body.moon .pContainer::after {
-  background-color: #c9c5c5 !important;
 }
 
 body {
@@ -438,12 +432,27 @@ body #menu .menuContainer .networks {
   justify-content: space-around;
   overflow: hidden;
   transition: all 0.5s;
+  height: 25px;
 }
 body #menu .menuContainer .networks a {
   transition: all 0.5s;
   transform: translateY(-20px);
   display: flex;
   gap: 5px;
+  color: #c17878;
+}
+body #menu .menuContainer .networks a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 7px; /* Posición del subrayado */
+  width: 0; /* Inicialmente sin anchura */
+  height: 1px; /* Grosor del subrayado */
+  background-color: #c17878; /* Color del subrayado */
+  transition: width 0.6s ease, background-color 0.3s ease;
+}
+body #menu .menuContainer .networks a:hover::after {
+  width: 100%; /* Ancho completo al hacer hover */
 }
 body #menu .menuContainer .networks .animation {
   transform: translateY(0px);
