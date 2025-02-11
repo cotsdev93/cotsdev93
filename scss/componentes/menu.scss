@@ -11,29 +11,42 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-      
+
         li {
           font-size: 40px;
           margin: 5px;
-          border: solid 1px #ff0000;
-          display: flex;  // Asegura que los elementos internos estén en la misma línea
-          align-items: center; // Alinea verticalmente el span y el p
-          gap: 10px; // Espaciado entre span y p
+          display: flex;
+          align-items: center;
+          gap: 10px;
           overflow: hidden;
+          transition: all 0.5s;
           p {
             transform: translateY(-30px);
-
+            opacity: 0;
+            transition: all 0.5s;
+          }
+          .animation {
+            transform: translateY(0px);
+            opacity: 1;
           }
         }
       }
-      
+
       .networks {
         margin-top: 10px;
         display: flex;
         justify-content: space-around;
+        overflow: hidden;
+        transition: all 0.5s;
         a {
+          transition: all 0.5s;
+          transform: translateY(-20px);
           display: flex;
           gap: 5px;
+        }
+        .animation {
+          transform: translateY(0px);
+          opacity: 1;
         }
       }
     }

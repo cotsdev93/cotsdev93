@@ -104,44 +104,100 @@ sun.addEventListener("click", (event) => {
 
 ///////////////////////////////////////////////////////////// menu
 
-const menu = document.querySelector(".fa-bars")
-const menuMain = document.getElementById("menu")
+const menu = document.querySelector(".fa-bars");
+const menuMain = document.getElementById("menu");
+const home = document.querySelector(".home");
+const work = document.querySelector(".work");
+const about = document.querySelector(".about");
+const contact = document.querySelector(".contact");
+const network = document.querySelectorAll(".network");
 
-menu.addEventListener("click", (event)=>{
-  event.preventDefault()
-  reverseAnimation()
-  setTimeout(() => {
-    main.classList.add("displayNone")
-  }, 700);
-  setTimeout(() => {
-    menuMain.classList.add("displayBlock")
+menu.addEventListener("click", (event) => {
+  if (menuMain.classList.contains("displayBlock")) {
+    event.preventDefault();
+    console.log("funca");
+    reverseMenuAnimation();
     setTimeout(() => {
-      menuAnimation()
-    }, 100);
-  }, 800);
-  console.log("funca")
-} )
+      menuMain.classList.remove("displayBlock")
+      setTimeout(() => {
+        console.log("va")
+        mainAnimation()
+      }, 100);
+    }, 1000);
+  } else {
+    event.preventDefault();
+    reverseAnimation();
+    setTimeout(() => {
+      menuAnimation();
+    }, 500);
+  }
+});
 
 function menuAnimation() {
-  console.log("SI")
-  }
+  setTimeout(() => {
+    main.classList.add("displayNone");
+  }, 300);
+  setTimeout(() => {
+    menuMain.classList.add("displayBlock");
+    // setTimeout(() => {
+    //   menuAnimation();
+    // }, 100);
+  }, 400);
+  setTimeout(() => {
+    home.classList.add("animation");
+  }, 500);
+  setTimeout(() => {
+    work.classList.add("animation");
+  }, 600);
+  setTimeout(() => {
+    about.classList.add("animation");
+  }, 700);
+  setTimeout(() => {
+    contact.classList.add("animation");
+  }, 800);
+  network.forEach((network) => {
+    setTimeout(() => {
+      network.classList.add("animation");
+    }, 900);
+  });
+}
 
+function reverseMenuAnimation() {
+  network.forEach((network) => {
+    setTimeout(() => {
+      network.classList.remove("animation");
+    }, 200);
+  });
+  setTimeout(() => {
+    contact.classList.remove("animation");
+  }, 300);
+  setTimeout(() => {
+    about.classList.remove("animation");
+  }, 400);
+  setTimeout(() => {
+    work.classList.remove("animation");
+  }, 500);
+  setTimeout(() => {
+    home.classList.remove("animation");
+  }, 600);
+}
 
 ///////////////////////////////////////////////////////////// main
 
 function mainAnimation() {
-  const logo = document.querySelector(".logo");
+  main.classList.remove("displayNone")
+
   const elementsWithDelays = [
     { selector: ".logo", delay: 0 },
     { selector: ".fa-bars", delay: 300 },
-    { selector: ".language", delay: 700 },
-    { selector: ".theme", delay: 1000 },
-    { selector: ".moreInfo", delay: 1850 },
-    { selector: ".presentation", delay: 2000 },
-    { selector: ".pTwo", delay: 2200 },
-    { selector: ".pOne", delay: 2400 },
-    { selector: ".wTwo", delay: 2600 },
-    { selector: ".wOne", delay: 2800 },
+    { selector: ".language", delay: 400 },
+    { selector: ".theme", delay: 600 },
+    { selector: ".moreInfo", delay: 800 },
+    { selector: ".presentation", delay: 950 },
+    { selector: ".pTwo", delay: 1000 },
+    { selector: ".pOne", delay: 1150 },
+    { selector: ".wTwo", delay: 1300 },
+    { selector: ".wOne", delay: 1400 },
   ];
 
   elementsWithDelays.forEach(({ selector, delay }) => {
@@ -153,9 +209,6 @@ function mainAnimation() {
     }
   });
 
-  if (logo.classList.contains("translateY(0px)")) {
-    console.log("funca");
-  }
 }
 
 mainAnimation();
