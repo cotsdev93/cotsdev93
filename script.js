@@ -37,6 +37,7 @@ const mpLinks = document.querySelectorAll(".mpLinks");
 const workTitle = document.querySelector(".workTitle");
 const titleAbout = document.querySelector(".titleAbout");
 const textAbout = document.querySelector(".textAbout");
+const optionMenu = document.querySelectorAll(".optionMenu")
 
 moon.addEventListener("click", (event) => {
   event.preventDefault();
@@ -67,6 +68,12 @@ moon.addEventListener("click", (event) => {
 
   titleAbout.classList.add("moon");
   textAbout.classList.add("moonText");
+
+  menu.classList.add("moon")
+
+  optionMenu.forEach((element)=>{
+    element.classList.add("moon")
+  })
 });
 
 sun.addEventListener("click", (event) => {
@@ -100,6 +107,13 @@ sun.addEventListener("click", (event) => {
 
   titleAbout.classList.remove("moon");
   textAbout.classList.remove("moonText");
+
+  menu.classList.remove("moon")
+  work.classList.add("moon")
+  
+  optionMenu.forEach((element)=>{
+    element.classList.remove("moon")
+  })
 });
 
 ///////////////////////////////////////////////////////////// menu

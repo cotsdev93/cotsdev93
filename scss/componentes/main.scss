@@ -127,10 +127,10 @@ body {
     display: none;
   }
 
-  // /* 🔹 Modo oscuro: cambiar color del subrayado en hover */
-  // &.moon {
-  //   .pContainer::after {
-  //     background-color: $mainMoon !important;
-  //   }
-  // }
+  /* 🔹 Modo oscuro: cambiar color del subrayado en hover */
+  &.moon {
+    .pContainer::after {
+      background-color: $mainMoon !important;
+    }
+  }
 }

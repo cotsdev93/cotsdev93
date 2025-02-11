@@ -63,6 +63,7 @@ body nav .navigation ul li a .language,
 body nav .navigation ul li a .theme {
   transform: translateY(-20px);
   transition: 0.8s ease-in-out;
+  background-color: transparent;
 }
 body nav .navigation ul li a .language {
   background-color: transparent;
@@ -104,6 +105,9 @@ body nav .navigation ul .intro {
   transform: translateY(0px);
 }
 
+body {
+  /* 🔹 Modo oscuro: cambiar color del subrayado en hover */
+}
 body #main .welcomeMessage {
   margin-top: 0px;
 }
@@ -209,6 +213,9 @@ body #main .intro {
 }
 body .displayNone {
   display: none;
+}
+body.moon .pContainer::after {
+  background-color: #c9c5c5 !important;
 }
 
 body {
@@ -421,10 +428,14 @@ body #menu .menuContainer ul li p {
   opacity: 0;
   transition: all 0.5s;
   color: #c17878;
+  cursor: pointer;
 }
 body #menu .menuContainer ul li .animation {
   transform: translateY(0px);
   opacity: 1;
+}
+body #menu .menuContainer ul li .moon {
+  color: #c9c5c5;
 }
 body #menu .menuContainer .networks {
   margin-top: 10px;
@@ -440,6 +451,7 @@ body #menu .menuContainer .networks a {
   display: flex;
   gap: 5px;
   color: #c17878;
+  cursor: pointer;
 }
 body #menu .menuContainer .networks a::after {
   content: "";
