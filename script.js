@@ -7,7 +7,9 @@ logo.addEventListener("click", (event) => {
 
   if (myProjects.classList.contains("displayBlock")) {
     reverseMyProjectsAnimation();
-    mainAnimation();
+    setTimeout(() => {
+      mainAnimation();
+    }, 1100);
     setTimeout(() => {
       main.classList.remove("displayNone");
     }, 1800);
@@ -15,9 +17,21 @@ logo.addEventListener("click", (event) => {
   if (moreAboutMe.classList.contains("displayBlock")) {
     console.log("funca");
     reverseMoreAboutMeAnimation();
-    mainAnimation();
+    setTimeout(() => {
+      mainAnimation();
+    }, 500);
     setTimeout(() => {
       main.classList.remove("displayNone");
+    }, 1100);
+  }
+  if (menuMain.classList.contains("displayBlock")) {
+    console.log("funca2");
+    reverseMenuAnimation();
+    setTimeout(() => {
+      menuMain.classList.remove("displayBlock");
+    }, 1100);
+    setTimeout(() => {
+      mainAnimation();
     }, 1100);
   }
 });
@@ -37,7 +51,7 @@ const mpLinks = document.querySelectorAll(".mpLinks");
 const workTitle = document.querySelector(".workTitle");
 const titleAbout = document.querySelector(".titleAbout");
 const textAbout = document.querySelector(".textAbout");
-const optionMenu = document.querySelectorAll(".optionMenu")
+const optionMenu = document.querySelectorAll(".optionMenu");
 
 moon.addEventListener("click", (event) => {
   event.preventDefault();
@@ -69,11 +83,11 @@ moon.addEventListener("click", (event) => {
   titleAbout.classList.add("moon");
   textAbout.classList.add("moonText");
 
-  menu.classList.add("moon")
+  menu.classList.add("moon");
 
-  optionMenu.forEach((element)=>{
-    element.classList.add("moon")
-  })
+  optionMenu.forEach((element) => {
+    element.classList.add("moon");
+  });
 });
 
 sun.addEventListener("click", (event) => {
@@ -108,12 +122,12 @@ sun.addEventListener("click", (event) => {
   titleAbout.classList.remove("moon");
   textAbout.classList.remove("moonText");
 
-  menu.classList.remove("moon")
-  work.classList.add("moon")
-  
-  optionMenu.forEach((element)=>{
-    element.classList.remove("moon")
-  })
+  menu.classList.remove("moon");
+  work.classList.add("moon");
+
+  optionMenu.forEach((element) => {
+    element.classList.remove("moon");
+  });
 });
 
 ///////////////////////////////////////////////////////////// menu
@@ -132,10 +146,10 @@ menu.addEventListener("click", (event) => {
     console.log("funca");
     reverseMenuAnimation();
     setTimeout(() => {
-      menuMain.classList.remove("displayBlock")
+      menuMain.classList.remove("displayBlock");
       setTimeout(() => {
-        console.log("va")
-        mainAnimation()
+        console.log("va");
+        mainAnimation();
       }, 100);
     }, 900);
   } else {
@@ -199,7 +213,7 @@ function reverseMenuAnimation() {
 ///////////////////////////////////////////////////////////// main
 
 function mainAnimation() {
-  main.classList.remove("displayNone")
+  main.classList.remove("displayNone");
 
   const elementsWithDelays = [
     { selector: ".logo", delay: 0 },
@@ -222,7 +236,6 @@ function mainAnimation() {
       }, delay);
     }
   });
-
 }
 
 mainAnimation();
@@ -368,3 +381,27 @@ function reverseMoreAboutMeAnimation() {
     mamCarrousel.classList.remove("animation");
   }, 600);
 }
+
+class MamPhotos {
+  constructor() {
+    this.photos = [];
+    this.cargarRegistros();
+  }
+
+  async cargarRegistros() {
+    const resultado = await fetch("./data/mamPhotos.json");
+    this.photos = await resultado.json();
+    this.cargarFotos(this.photos);
+    console.log(this.photos);
+  }
+
+  cargarFotos(fotos) {
+    const carrouselContent = document.querySelector(".carrouselContent");
+    carrouselContent.innerHTML = "";
+    fotos.forEach((foto) => {
+      carrouselContent.innerHTML += `<img src="${foto.img}"  alt="${foto.alt}">`;
+    });
+  }
+}
+
+const mamPhotos = new MamPhotos();

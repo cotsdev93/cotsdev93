@@ -4,7 +4,7 @@ body {
     display: flex;
     flex-grow: 1;
     display: none;
-
+    z-index: 1;
     .previewContainer {
       width: 50%;
       border: solid 1px red;

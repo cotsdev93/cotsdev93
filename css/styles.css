@@ -27,6 +27,7 @@ body nav {
   margin: 40px;
   display: flex;
   overflow: hidden;
+  z-index: 1;
 }
 body nav .logoContainer {
   width: 50%;
@@ -107,6 +108,9 @@ body nav .navigation ul .intro {
 
 body {
   /* 🔹 Modo oscuro: cambiar color del subrayado en hover */
+}
+body #main {
+  z-index: 1;
 }
 body #main .welcomeMessage {
   margin-top: 0px;
@@ -226,6 +230,7 @@ body #myProjects {
   display: flex;
   flex-grow: 1;
   display: none;
+  z-index: 1;
 }
 body #myProjects .previewContainer {
   width: 50%;
@@ -338,7 +343,7 @@ body #moreAboutMe {
   height: 100vh;
   position: absolute;
   display: none;
-  z-index: -1;
+  z-index: 0;
 }
 body #moreAboutMe .mamAbout {
   width: 50%;
@@ -384,12 +389,43 @@ body #moreAboutMe .mamCarrousel {
   transform: translateY(-100px);
   opacity: 0;
   transition: all 1s;
+  border: solid 5px red;
+  position: relative;
 }
-body #moreAboutMe .mamCarrousel img {
+body #moreAboutMe .mamCarrousel .fa-solid {
+  position: absolute;
+  color: white;
+  opacity: 0.5;
+  z-index: 5;
+  font-size: 20px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+body #moreAboutMe .mamCarrousel .fa-solid:hover {
+  opacity: 1;
+}
+body #moreAboutMe .mamCarrousel .fa-circle-chevron-left {
+  top: 50%;
+  left: 10px;
+}
+body #moreAboutMe .mamCarrousel .fa-circle-chevron-right {
+  top: 50%;
+  right: 10px;
+}
+body #moreAboutMe .mamCarrousel .carrouselContent {
+  border: solid 5px green;
+  height: 100%;
   width: 100%;
-  transform: translateY(-100px);
+  display: flex;
+  overflow: auto;
+  flex-wrap: nowrap;
+}
+body #moreAboutMe .mamCarrousel .carrouselContent img {
+  width: 100%;
+  border: solid 2.5px red;
   object-fit: cover;
-  opacity: 70%;
+  opacity: 80%;
+  height: auto;
 }
 body #moreAboutMe .animation {
   transform: translateY(0px);

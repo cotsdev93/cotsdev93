@@ -3,6 +3,7 @@ body {
     margin: 40px;
     display: flex;
     overflow: hidden;
+    z-index: 1;
     .logoContainer {
       width: 50%;
       .logo {

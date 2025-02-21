@@ -1,8 +1,8 @@
 body {
   #main {
+    z-index: 1;
     .welcomeMessage {
       margin-top: 0px;
-
       .welcome {
         display: flex;
         justify-content: center;
