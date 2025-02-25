@@ -32,7 +32,7 @@ logo.addEventListener("click", (event) => {
     }, 1100);
     setTimeout(() => {
       mainAnimation();
-    }, 1100);
+    }, 1101);
   }
 });
 
@@ -330,6 +330,31 @@ function reverseMyProjectsAnimation() {
   }, 1200);
 }
 
+const previewContainer = document.querySelector(".previewContainer");
+const links = document.querySelectorAll(".mpLinks");
+
+const images = {
+  mpLinksGanadera: "./assets/ganaderaArenales.jpg",
+  mpLinksDas: "./assets/dasService.jpg",
+  mpLinksDres: "./assets/dresOrlandi.jpg",
+};
+
+// Agregar eventos a cada link
+links.forEach((link) => {
+  link.addEventListener("mouseenter", () => {
+    const className = link.classList[1]; // Segunda clase del enlace
+    previewContainer.style.backgroundImage = `url(${images[className]})`;
+    previewContainer.style.backgroundSize = "cover";
+    previewContainer.style.backgroundPosition = "center";
+    previewContainer.style.backgroundRepeat = "no-repeat";
+    previewContainer.style.opacity = "1";
+  });
+
+  link.addEventListener("mouseleave", () => {
+    previewContainer.style.opacity = "0"; // Se oculta cuando el mouse sale
+  });
+});
+
 /////////////////////////////////////////////// more about me
 
 const moreAboutMeInfo = document.querySelector(".moreAboutMe");
@@ -414,15 +439,12 @@ const carrousel = document.querySelector(".carrouselContent");
 const leftButton = document.querySelector(".leftmam");
 const rightButton = document.querySelector(".rightmam");
 
-// Detectamos el tamaño de una imagen para calcular el desplazamiento
 const mamImgContainer = document.querySelector(".mamImgContainer");
-const scrollAmount = mamImgContainer ? mamImgContainer.offsetWidth : 600; // Ancho de una imagen o 600px por defecto
+const scrollAmount = mamImgContainer ? mamImgContainer.offsetWidth : 600;
 
-// Ocultamos el botón izquierdo al inicio
 leftButton.style.opacity = "0";
-leftButton.style.pointerEvents = "none"; // Evita que se pueda hacer clic en él
+leftButton.style.pointerEvents = "none";
 
-// Función para actualizar la visibilidad de los botones
 const updateButtons = () => {
   if (carrousel.scrollLeft <= 0) {
     leftButton.style.opacity = "0";
@@ -441,15 +463,12 @@ const updateButtons = () => {
   }
 };
 
-// Evento para mover el carrusel a la izquierda
 leftButton.addEventListener("click", () => {
   carrousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
 });
 
-// Evento para mover el carrusel a la derecha
 rightButton.addEventListener("click", () => {
   carrousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
 });
 
-// Evento de scroll para actualizar los botones
 carrousel.addEventListener("scroll", updateButtons);
