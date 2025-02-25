@@ -152,6 +152,28 @@ menu.addEventListener("click", (event) => {
         mainAnimation();
       }, 100);
     }, 900);
+  } else if (moreAboutMe.classList.contains("displayBlock")) {
+    event.preventDefault();
+    console.log("funca");
+    reverseMoreAboutMeAnimation();
+    setTimeout(() => {
+      menuMain.classList.remove("displayBlock");
+      setTimeout(() => {
+        console.log("va");
+        menuAnimation();
+      }, 100);
+    }, 900);
+  } else if (myProjects.classList.contains("displayBlock")) {
+    event.preventDefault();
+    console.log("funca");
+    reverseMyProjectsAnimation();
+    setTimeout(() => {
+      menuMain.classList.remove("displayBlock");
+      setTimeout(() => {
+        console.log("va");
+        menuAnimation();
+      }, 100);
+    }, 900);
   } else {
     event.preventDefault();
     reverseAnimation();
@@ -354,6 +376,7 @@ links.forEach((link) => {
     previewContainer.style.opacity = "0"; // Se oculta cuando el mouse sale
   });
 });
+
 
 /////////////////////////////////////////////// more about me
 

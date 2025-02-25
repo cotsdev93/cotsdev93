@@ -237,27 +237,7 @@ body #myProjects .previewContainer {
   border-radius: 0px 50px 0px 0px;
   transition: opacity 0.5s ease-in-out, background-image 0.3s ease-in-out;
   pointer-events: none;
-}
-.mpLinksGanadera:hover ~ body #myProjects .previewContainer {
-  background-image: url(../assets/ganaderaArenales.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 1;
-}
-.mpLinksDas:hover ~ body #myProjects .previewContainer {
-  background-image: url(../assets/dasService.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 1;
-}
-.mpLinksDres:hover ~ body #myProjects .previewContainer {
-  background-image: url(../assets/dresOrlandi.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 1;
+  opacity: 0;
 }
 body #myProjects .listContainer {
   width: 50%;
