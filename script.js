@@ -399,9 +399,57 @@ class MamPhotos {
     const carrouselContent = document.querySelector(".carrouselContent");
     carrouselContent.innerHTML = "";
     fotos.forEach((foto) => {
-      carrouselContent.innerHTML += `<img src="${foto.img}"  alt="${foto.alt}">`;
+      carrouselContent.innerHTML += `
+      <div class="mamImgContainer">
+        <img src="${foto.img}"  alt="${foto.alt}">
+      </div>
+      `;
     });
   }
 }
 
 const mamPhotos = new MamPhotos();
+
+const carrousel = document.querySelector(".carrouselContent");
+const leftButton = document.querySelector(".leftmam");
+const rightButton = document.querySelector(".rightmam");
+
+// Detectamos el tamaño de una imagen para calcular el desplazamiento
+const mamImgContainer = document.querySelector(".mamImgContainer");
+const scrollAmount = mamImgContainer ? mamImgContainer.offsetWidth : 600; // Ancho de una imagen o 600px por defecto
+
+// Ocultamos el botón izquierdo al inicio
+leftButton.style.opacity = "0";
+leftButton.style.pointerEvents = "none"; // Evita que se pueda hacer clic en él
+
+// Función para actualizar la visibilidad de los botones
+const updateButtons = () => {
+  if (carrousel.scrollLeft <= 0) {
+    leftButton.style.opacity = "0";
+    leftButton.style.pointerEvents = "none";
+  } else {
+    leftButton.style.opacity = "0.5";
+    leftButton.style.pointerEvents = "auto";
+  }
+
+  if (carrousel.scrollLeft + carrousel.clientWidth >= carrousel.scrollWidth) {
+    rightButton.style.opacity = "0";
+    rightButton.style.pointerEvents = "none";
+  } else {
+    rightButton.style.opacity = "0.5";
+    rightButton.style.pointerEvents = "auto";
+  }
+};
+
+// Evento para mover el carrusel a la izquierda
+leftButton.addEventListener("click", () => {
+  carrousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+});
+
+// Evento para mover el carrusel a la derecha
+rightButton.addEventListener("click", () => {
+  carrousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+});
+
+// Evento de scroll para actualizar los botones
+carrousel.addEventListener("scroll", updateButtons);

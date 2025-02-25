@@ -389,7 +389,6 @@ body #moreAboutMe .mamCarrousel {
   transform: translateY(-100px);
   opacity: 0;
   transition: all 1s;
-  border: solid 5px red;
   position: relative;
 }
 body #moreAboutMe .mamCarrousel .fa-solid {
@@ -413,19 +412,28 @@ body #moreAboutMe .mamCarrousel .fa-circle-chevron-right {
   right: 10px;
 }
 body #moreAboutMe .mamCarrousel .carrouselContent {
-  border: solid 5px green;
   height: 100%;
   width: 100%;
   display: flex;
-  overflow: auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   flex-wrap: nowrap;
+  border-radius: 8px 0 0 8px;
 }
-body #moreAboutMe .mamCarrousel .carrouselContent img {
+body #moreAboutMe .mamCarrousel .carrouselContent .mamImgContainer {
+  flex: 0 0 auto;
   width: 100%;
-  border: solid 2.5px red;
+  max-width: 600px;
+  scroll-snap-align: center;
+}
+body #moreAboutMe .mamCarrousel .carrouselContent .mamImgContainer img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
   object-fit: cover;
-  opacity: 80%;
-  height: auto;
+}
+body #moreAboutMe .mamCarrousel ::-webkit-scrollbar {
+  display: none;
 }
 body #moreAboutMe .animation {
   transform: translateY(0px);
