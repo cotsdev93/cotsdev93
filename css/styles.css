@@ -331,13 +331,11 @@ body #moreAboutMe .mamAboutContainer {
 body #moreAboutMe .mamAboutContainer .mamAbout {
   width: 80%;
   max-height: 20%;
-  border: solid 5px red;
 }
 body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer {
   flex: 1;
   height: 100%;
   margin-bottom: 10px;
-  border: solid 1px red;
   box-sizing: border-box;
 }
 body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer .titleAbout {

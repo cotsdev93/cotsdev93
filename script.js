@@ -378,7 +378,6 @@ links.forEach((link) => {
 });
 
 /////////////////////////////////////////////// more about me
-
 const moreAboutMeInfo = document.querySelector(".moreAboutMe");
 const moreAboutMe = document.getElementById("moreAboutMe");
 
@@ -391,16 +390,16 @@ moreAboutMeInfo.addEventListener("click", () => {
   }, 1000);
 
   setTimeout(() => {
-    moreAboutMeAnimation();
+    moreAboutMeAnimation(1); // Se pasó el ID como parámetro para evitar el error de referencia no definida
   }, 1100);
 });
 
-function moreAboutMeAnimation() {
+function moreAboutMeAnimation(id) { // Se agregó id como parámetro
   const mamAbout = document.querySelector(".mamAbout");
   const mamCarrousel = document.querySelector(".mamCarrousel");
-  const textAbout = document.querySelectorAll(".textAbout");
-  const titleAbout = document.querySelectorAll(".titleAbout");
-  
+  const textAbout = document.querySelectorAll(`.textAbout[data-id="${id}"]`);
+  const titleAbout = document.querySelectorAll(`.titleAbout[data-id="${id}"]`);
+
   mamAbout.classList.add("animation");
 
   setTimeout(() => {
@@ -408,33 +407,36 @@ function moreAboutMeAnimation() {
       element.classList.add("animation");
     });
   }, 800);
+
   setTimeout(() => {
     textAbout.forEach((element) => {
       element.classList.add("animation");
     });
   }, 600);
+
   setTimeout(() => {
     mamCarrousel.classList.add("animation");
   }, 400);
 }
 
-function reverseMoreAboutMeAnimation() {
+function reverseMoreAboutMeAnimation(id) { // Se agregó id como parámetro
   const mamAbout = document.querySelector(".mamAbout");
   const mamCarrousel = document.querySelector(".mamCarrousel");
-  const textAbout = document.querySelectorAll(".textAbout");
-  const titleAbout = document.querySelectorAll(".titleAbout");
-
+  const textAbout = document.querySelectorAll(`.textAbout[data-id="${id}"]`);
+  const titleAbout = document.querySelectorAll(`.titleAbout[data-id="${id}"]`);
 
   setTimeout(() => {
     titleAbout.forEach((element) => {
       element.classList.remove("animation");
     });
   }, 200);
+
   setTimeout(() => {
     textAbout.forEach((element) => {
       element.classList.remove("animation");
     });
   }, 400);
+
   setTimeout(() => {
     mamCarrousel.classList.remove("animation");
   }, 600);
@@ -447,10 +449,13 @@ class AboutMe {
   }
 
   async cargarRegistros() {
-    const resultado = await fetch("./data/aboutMe.json");
-    this.aboutMe = await resultado.json();
-    this.mostrarAboutMe(this.aboutMe);
-    console.log(this.aboutMe);
+    try { // Se agregó manejo de errores para evitar fallos en la carga de datos
+      const resultado = await fetch("./data/aboutMe.json");
+      this.aboutMe = await resultado.json();
+      this.mostrarAboutMe(this.aboutMe);
+    } catch (error) {
+      console.error("Error cargando los registros:", error);
+    }
   }
 
   mostrarAboutMe(data) {
@@ -459,8 +464,8 @@ class AboutMe {
     data.forEach((about) => {
       mamAbout.innerHTML += `
         <div class="aboutContainer">
-          <p class="titleAbout">${about.title}</p>
-          <p class="textAbout">
+          <p class="titleAbout" data-id="${about.id}">${about.title}</p>
+          <p class="textAbout" data-id="${about.id}">
             ${about.description}
           </p>
         </div>
