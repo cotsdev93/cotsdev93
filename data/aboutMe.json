@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "title": "Sobre mí 1",
+    "description": "Soy un desarrollador web full stack con una pasión por crear soluciones tecnológicas que impulsan el crecimiento y la eficiencia."
+  },
+  {
+    "id": 2,
+    "title": "Sobre mí 2    ",
+    "description": "Soy un desarrollador web full stack con una pasión por crear soluciones tecnológicas que impulsan el crecimiento y la eficiencia."
+  },
+  {
+    "id": 3,
+    "title": "Sobre mí 3",
+    "description": "Soy un desarrollador web full stack con una pasión por crear soluciones tecnológicas que impulsan el crecimiento y la eficiencia."
+  },
+  {
+    "id":4,
+    "title": "Sobre mí 4",
+    "description": "Soy un desarrollador web full stack con una pasión por crear soluciones tecnológicas que impulsan el crecimiento y la eficiencia."
+  },
+  {
+    "id": 5,
+    "title": "Sobre mí 5",
+    "description": "Soy un desarrollador web full stack con una pasión por crear soluciones tecnológicas que impulsan el crecimiento y la eficiencia."
+  }
+]

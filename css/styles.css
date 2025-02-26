@@ -321,42 +321,50 @@ body #moreAboutMe {
   display: none;
   z-index: 0;
 }
-body #moreAboutMe .mamAbout {
+body #moreAboutMe .mamAboutContainer {
   width: 50%;
-  height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-body #moreAboutMe .mamAbout .aboutContainer {
-  margin: 50px;
+body #moreAboutMe .mamAboutContainer .mamAbout {
+  width: 80%;
+  height: 40%;
+  flex: 1;
+  max-height: 20%;
+  border: solid 5px red;
 }
-body #moreAboutMe .mamAbout .aboutContainer .titleAbout {
-  font-size: 50px;
-  padding-bottom: 5px;
+body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer {
+  flex: 1;
+}
+body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer .titleAbout {
+  font-size: 40px;
+  padding-bottom: 2px;
   border-bottom: 1px solid #c17878;
   transition: all 1s;
   transform: translateY(-100px);
   opacity: 0;
   color: #c17878;
   background-color: transparent;
+  height: auto;
 }
-body #moreAboutMe .mamAbout .aboutContainer .textAbout {
-  padding-top: 15px;
+body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer .textAbout {
+  padding-top: 5px;
   transition: all 1s;
   transform: translateY(-100px);
   opacity: 0;
   color: #c17878;
 }
-body #moreAboutMe .mamAbout .aboutContainer .animation {
+body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer .animation {
   transform: translateY(0px);
   opacity: 1;
 }
-body #moreAboutMe .mamAbout .aboutContainer .moon {
+body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer .moon {
   color: #c9c5c5;
   border-bottom: 1px solid #c9c5c5;
 }
-body #moreAboutMe .mamAbout .aboutContainer .moonText {
+body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer .moonText {
   color: #c9c5c5;
 }
 body #moreAboutMe .mamCarrousel {

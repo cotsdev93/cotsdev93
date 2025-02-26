@@ -377,7 +377,6 @@ links.forEach((link) => {
   });
 });
 
-
 /////////////////////////////////////////////// more about me
 
 const moreAboutMeInfo = document.querySelector(".moreAboutMe");
@@ -429,6 +428,38 @@ function reverseMoreAboutMeAnimation() {
     mamCarrousel.classList.remove("animation");
   }, 600);
 }
+
+class AboutMe {
+  constructor() {
+    this.aboutMe = [];
+    this.cargarRegistros();
+  }
+
+  async cargarRegistros() {
+    const resultado = await fetch("./data/aboutMe.json");
+    this.aboutMe = await resultado.json();
+    this.mostrarAboutMe(this.aboutMe);
+    console.log(this.aboutMe);
+  }
+
+  mostrarAboutMe(data) {
+    const mamAbout = document.querySelector(".mamAbout");
+    mamAbout.innerHTML = "";
+    data.forEach((about) => {
+      mamAbout.innerHTML += `
+        <div class="aboutContainer">
+          <p class="titleAbout">${about.title}</p>
+          <p class="textAbout">
+            ${about.description}
+          </p>
+        </div>
+      `;
+    });
+  }
+}
+
+const aboutMe = new AboutMe();
+
 
 class MamPhotos {
   constructor() {
