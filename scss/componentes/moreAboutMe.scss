@@ -12,23 +12,19 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      // border: solid 5px blue;
       .mamAbout {
         width: 80%;
-        // height: 100%;
-        // display: flex;
-        // flex: 1;
+        flex: 1;
         max-height: 20%;
-        // justify-content: center;
-        // align-items: center;
-        // border: solid 5px red;
-        // overflow: hidden;
+        border: solid 1px red;
+        position: relative;
         .aboutContainer {
+          position: absolute;
           flex: 1;
           height: 100%;
           margin-bottom: 10px;
-          // border: solid  1px red;
           box-sizing: border-box;
+          border: solid 1px blue;
           .titleAbout {
             font-size: 30px;
             padding-bottom: 2px;
@@ -41,7 +37,6 @@ body {
             height: auto;
           }
           .textAbout {
-            // ;border: solid 1px blue;
             padding-top: 5px;
             transition: all 1s;
             transform: translateY(-100px);
@@ -68,7 +63,6 @@ body {
       transform: translateY(-100px);
       opacity: 0;
       transition: all 1s;
-      // border: solid 5px red;
       position: relative;
       .fa-solid {
         position: absolute;

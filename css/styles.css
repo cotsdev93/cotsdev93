@@ -26,8 +26,12 @@ body {
 body nav {
   margin: 40px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   z-index: 1;
+  height: auto;
+  min-height: 20px;
 }
 body nav .logoContainer {
   width: 50%;
@@ -330,13 +334,18 @@ body #moreAboutMe .mamAboutContainer {
 }
 body #moreAboutMe .mamAboutContainer .mamAbout {
   width: 80%;
+  flex: 1;
   max-height: 20%;
+  border: solid 1px red;
+  position: relative;
 }
 body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer {
+  position: absolute;
   flex: 1;
   height: 100%;
   margin-bottom: 10px;
   box-sizing: border-box;
+  border: solid 1px blue;
 }
 body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer .titleAbout {
   font-size: 30px;

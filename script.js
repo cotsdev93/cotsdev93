@@ -1,5 +1,4 @@
 ///////////////////////////////////////////////////////////// NAV
-
 const logo = document.querySelector(".logo");
 
 logo.addEventListener("click", (event) => {
@@ -15,8 +14,7 @@ logo.addEventListener("click", (event) => {
     }, 1800);
   }
   if (moreAboutMe.classList.contains("displayBlock")) {
-    console.log("funca");
-    reverseMoreAboutMeAnimation();
+    reverseMoreAboutMeAnimation(currentId);
     setTimeout(() => {
       mainAnimation();
     }, 500);
@@ -25,7 +23,6 @@ logo.addEventListener("click", (event) => {
     }, 1100);
   }
   if (menuMain.classList.contains("displayBlock")) {
-    console.log("funca2");
     reverseMenuAnimation();
     setTimeout(() => {
       menuMain.classList.remove("displayBlock");
@@ -378,8 +375,11 @@ links.forEach((link) => {
 });
 
 /////////////////////////////////////////////// more about me
+
 const moreAboutMeInfo = document.querySelector(".moreAboutMe");
 const moreAboutMe = document.getElementById("moreAboutMe");
+
+let currentId = 1; // Variable que mantiene el id actual
 
 moreAboutMeInfo.addEventListener("click", () => {
   reverseAnimation();
@@ -390,17 +390,37 @@ moreAboutMeInfo.addEventListener("click", () => {
   }, 1000);
 
   setTimeout(() => {
-    moreAboutMeAnimation(1); // Se pasó el ID como parámetro para evitar el error de referencia no definida
+    moreAboutMeAnimation(currentId); // Pasa el currentId
   }, 1100);
 });
 
-function moreAboutMeAnimation(id) { // Se agregó id como parámetro
+function moreAboutMeAnimation(currentId) {
   const mamAbout = document.querySelector(".mamAbout");
   const mamCarrousel = document.querySelector(".mamCarrousel");
-  const textAbout = document.querySelectorAll(`.textAbout[data-id="${id}"]`);
-  const titleAbout = document.querySelectorAll(`.titleAbout[data-id="${id}"]`);
+  mamTextAnimation(currentId);
 
   mamAbout.classList.add("animation");
+
+  setTimeout(() => {
+    mamCarrousel.classList.add("animation");
+  }, 400);
+}
+
+function reverseMoreAboutMeAnimation(currentId) {
+  const mamAbout = document.querySelector(".mamAbout");
+  const mamCarrousel = document.querySelector(".mamCarrousel");
+  reverseMamTextAnimation(currentId);
+  setTimeout(() => {
+    mamCarrousel.classList.remove("animation");
+  }, 600);
+  setTimeout(() => {
+    moreAboutMe.classList.remove("displayBlock");
+  }, 1200);
+}
+
+function mamTextAnimation(id) {
+  const textAbout = document.querySelectorAll(`.textAbout[data-id="${id}"]`);
+  const titleAbout = document.querySelectorAll(`.titleAbout[data-id="${id}"]`);
 
   setTimeout(() => {
     titleAbout.forEach((element) => {
@@ -413,15 +433,9 @@ function moreAboutMeAnimation(id) { // Se agregó id como parámetro
       element.classList.add("animation");
     });
   }, 600);
-
-  setTimeout(() => {
-    mamCarrousel.classList.add("animation");
-  }, 400);
 }
 
-function reverseMoreAboutMeAnimation(id) { // Se agregó id como parámetro
-  const mamAbout = document.querySelector(".mamAbout");
-  const mamCarrousel = document.querySelector(".mamCarrousel");
+function reverseMamTextAnimation(id) {
   const textAbout = document.querySelectorAll(`.textAbout[data-id="${id}"]`);
   const titleAbout = document.querySelectorAll(`.titleAbout[data-id="${id}"]`);
 
@@ -436,10 +450,6 @@ function reverseMoreAboutMeAnimation(id) { // Se agregó id como parámetro
       element.classList.remove("animation");
     });
   }, 400);
-
-  setTimeout(() => {
-    mamCarrousel.classList.remove("animation");
-  }, 600);
 }
 
 class AboutMe {
@@ -449,7 +459,8 @@ class AboutMe {
   }
 
   async cargarRegistros() {
-    try { // Se agregó manejo de errores para evitar fallos en la carga de datos
+    try {
+      // Manejo de errores para evitar fallos en la carga de datos
       const resultado = await fetch("./data/aboutMe.json");
       this.aboutMe = await resultado.json();
       this.mostrarAboutMe(this.aboutMe);
@@ -475,7 +486,6 @@ class AboutMe {
 }
 
 const aboutMe = new AboutMe();
-
 
 class MamPhotos {
   constructor() {
@@ -510,7 +520,9 @@ const leftButton = document.querySelector(".leftmam");
 const rightButton = document.querySelector(".rightmam");
 
 const mamImgContainer = document.querySelector(".mamImgContainer");
-const scrollAmount = mamImgContainer ? mamImgContainer.offsetWidth : 600;
+const imgWidth = mamImgContainer
+  ? mamImgContainer.querySelector("img").offsetWidth
+  : 300; // Ajusta el valor según el tamaño de las imágenes
 
 leftButton.style.opacity = "0";
 leftButton.style.pointerEvents = "none";
@@ -534,11 +546,19 @@ const updateButtons = () => {
 };
 
 leftButton.addEventListener("click", () => {
-  carrousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  carrousel.scrollBy({ left: -imgWidth, behavior: "smooth" });
+  if (currentId > 1) {
+    currentId--;
+    console.log(currentId);
+  }
 });
 
 rightButton.addEventListener("click", () => {
-  carrousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  carrousel.scrollBy({ left: imgWidth, behavior: "smooth" });
+  if (currentId < aboutMe.aboutMe.length) {
+    currentId++;
+    console.log(currentId);
+  }
 });
 
 carrousel.addEventListener("scroll", updateButtons);

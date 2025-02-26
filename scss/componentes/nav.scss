@@ -2,8 +2,13 @@ body {
   nav {
     margin: 40px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
     z-index: 1;
+    // border: solid 1px red;
+    height: auto;
+    min-height: 20px;
     .logoContainer {
       width: 50%;
       .logo {
