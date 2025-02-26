@@ -398,15 +398,20 @@ moreAboutMeInfo.addEventListener("click", () => {
 function moreAboutMeAnimation() {
   const mamAbout = document.querySelector(".mamAbout");
   const mamCarrousel = document.querySelector(".mamCarrousel");
-  const textAbout = document.querySelector(".textAbout");
-  const titleAbout = document.querySelector(".titleAbout");
+  const textAbout = document.querySelectorAll(".textAbout");
+  const titleAbout = document.querySelectorAll(".titleAbout");
+  
   mamAbout.classList.add("animation");
 
   setTimeout(() => {
-    titleAbout.classList.add("animation");
+    titleAbout.forEach((element) => {
+      element.classList.add("animation");
+    });
   }, 800);
   setTimeout(() => {
-    textAbout.classList.add("animation");
+    textAbout.forEach((element) => {
+      element.classList.add("animation");
+    });
   }, 600);
   setTimeout(() => {
     mamCarrousel.classList.add("animation");
@@ -416,13 +421,19 @@ function moreAboutMeAnimation() {
 function reverseMoreAboutMeAnimation() {
   const mamAbout = document.querySelector(".mamAbout");
   const mamCarrousel = document.querySelector(".mamCarrousel");
-  const textAbout = document.querySelector(".textAbout");
-  const titleAbout = document.querySelector(".titleAbout");
+  const textAbout = document.querySelectorAll(".textAbout");
+  const titleAbout = document.querySelectorAll(".titleAbout");
+
+
   setTimeout(() => {
-    titleAbout.classList.remove("animation");
+    titleAbout.forEach((element) => {
+      element.classList.remove("animation");
+    });
   }, 200);
   setTimeout(() => {
-    textAbout.classList.remove("animation");
+    textAbout.forEach((element) => {
+      element.classList.remove("animation");
+    });
   }, 400);
   setTimeout(() => {
     mamCarrousel.classList.remove("animation");

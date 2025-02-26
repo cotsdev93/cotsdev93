@@ -330,16 +330,18 @@ body #moreAboutMe .mamAboutContainer {
 }
 body #moreAboutMe .mamAboutContainer .mamAbout {
   width: 80%;
-  height: 40%;
-  flex: 1;
   max-height: 20%;
   border: solid 5px red;
 }
 body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer {
   flex: 1;
+  height: 100%;
+  margin-bottom: 10px;
+  border: solid 1px red;
+  box-sizing: border-box;
 }
 body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer .titleAbout {
-  font-size: 40px;
+  font-size: 30px;
   padding-bottom: 2px;
   border-bottom: 1px solid #c17878;
   transition: all 1s;
