@@ -16,7 +16,6 @@ body {
         width: 80%;
         flex: 1;
         max-height: 20%;
-        border: solid 1px red;
         position: relative;
         .aboutContainer {
           position: absolute;
@@ -24,7 +23,6 @@ body {
           height: 100%;
           margin-bottom: 10px;
           box-sizing: border-box;
-          border: solid 1px blue;
           .titleAbout {
             font-size: 30px;
             padding-bottom: 2px;
@@ -47,6 +45,10 @@ body {
             transform: translateY(0px);
             opacity: 1;
           }
+          // .reverseAnimation {
+          //   transform: translateY(100px);
+          //   opacity: 0;
+          // }
           .moon {
             color: $mainMoon;
             border-bottom: 1px solid $mainMoon;

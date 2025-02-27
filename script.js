@@ -375,11 +375,10 @@ links.forEach((link) => {
 });
 
 /////////////////////////////////////////////// more about me
-
 const moreAboutMeInfo = document.querySelector(".moreAboutMe");
 const moreAboutMe = document.getElementById("moreAboutMe");
 
-let currentId = 1; // Variable que mantiene el id actual
+let currentId = 1;
 
 moreAboutMeInfo.addEventListener("click", () => {
   reverseAnimation();
@@ -390,7 +389,7 @@ moreAboutMeInfo.addEventListener("click", () => {
   }, 1000);
 
   setTimeout(() => {
-    moreAboutMeAnimation(currentId); // Pasa el currentId
+    moreAboutMeAnimation(currentId);
   }, 1100);
 });
 
@@ -422,34 +421,56 @@ function mamTextAnimation(id) {
   const textAbout = document.querySelectorAll(`.textAbout[data-id="${id}"]`);
   const titleAbout = document.querySelectorAll(`.titleAbout[data-id="${id}"]`);
 
-  setTimeout(() => {
-    titleAbout.forEach((element) => {
-      element.classList.add("animation");
-    });
-  }, 800);
-
-  setTimeout(() => {
-    textAbout.forEach((element) => {
-      element.classList.add("animation");
-    });
-  }, 600);
+  textAbout.forEach((element) => {
+    element.style.opacity = "1";
+    element.style.transform = "translateY(0)";
+  });
+  titleAbout.forEach((element) => {
+    element.style.opacity = "1";
+    element.style.transform = "translateY(0)";
+  });
 }
 
-function reverseMamTextAnimation(id) {
+function hideMamTextAnimation(id) {
   const textAbout = document.querySelectorAll(`.textAbout[data-id="${id}"]`);
   const titleAbout = document.querySelectorAll(`.titleAbout[data-id="${id}"]`);
 
-  setTimeout(() => {
-    titleAbout.forEach((element) => {
-      element.classList.remove("animation");
-    });
-  }, 200);
+  textAbout.forEach((element) => {
+    element.style.opacity = "0";
+    element.style.transform = "translateY(50px)";
+  });
+  titleAbout.forEach((element) => {
+    element.style.opacity = "0";
+    element.style.transform = "translateY(50px)";
+  });
+}
 
-  setTimeout(() => {
-    textAbout.forEach((element) => {
-      element.classList.remove("animation");
-    });
-  }, 400);
+function pushDownMamTextAnimation(id) {
+  const textAbout = document.querySelectorAll(`.textAbout[data-id="${id}"]`);
+  const titleAbout = document.querySelectorAll(`.titleAbout[data-id="${id}"]`);
+
+  textAbout.forEach((element) => {
+    element.style.opacity = "0";
+    element.style.transform = "translateY(100px)";
+  });
+  titleAbout.forEach((element) => {
+    element.style.opacity = "0";
+    element.style.transform = "translateY(100px)";
+  });
+}
+
+function pullUpMamTextAnimation(id) {
+  const textAbout = document.querySelectorAll(`.textAbout[data-id="${id}"]`);
+  const titleAbout = document.querySelectorAll(`.titleAbout[data-id="${id}"]`);
+
+  textAbout.forEach((element) => {
+    element.style.opacity = "0";
+    element.style.transform = "translateY(-100px)";
+  });
+  titleAbout.forEach((element) => {
+    element.style.opacity = "0";
+    element.style.transform = "translateY(-100px)";
+  });
 }
 
 class AboutMe {
@@ -460,7 +481,6 @@ class AboutMe {
 
   async cargarRegistros() {
     try {
-      // Manejo de errores para evitar fallos en la carga de datos
       const resultado = await fetch("./data/aboutMe.json");
       this.aboutMe = await resultado.json();
       this.mostrarAboutMe(this.aboutMe);
@@ -476,9 +496,7 @@ class AboutMe {
       mamAbout.innerHTML += `
         <div class="aboutContainer">
           <p class="titleAbout" data-id="${about.id}">${about.title}</p>
-          <p class="textAbout" data-id="${about.id}">
-            ${about.description}
-          </p>
+          <p class="textAbout" data-id="${about.id}">${about.description}</p>
         </div>
       `;
     });
@@ -497,7 +515,6 @@ class MamPhotos {
     const resultado = await fetch("./data/mamPhotos.json");
     this.photos = await resultado.json();
     this.cargarFotos(this.photos);
-    console.log(this.photos);
   }
 
   cargarFotos(fotos) {
@@ -505,9 +522,9 @@ class MamPhotos {
     carrouselContent.innerHTML = "";
     fotos.forEach((foto) => {
       carrouselContent.innerHTML += `
-      <div class="mamImgContainer">
-        <img src="${foto.img}"  alt="${foto.alt}">
-      </div>
+        <div class="mamImgContainer">
+          <img src="${foto.img}" alt="${foto.alt}">
+        </div>
       `;
     });
   }
@@ -518,11 +535,6 @@ const mamPhotos = new MamPhotos();
 const carrousel = document.querySelector(".carrouselContent");
 const leftButton = document.querySelector(".leftmam");
 const rightButton = document.querySelector(".rightmam");
-
-const mamImgContainer = document.querySelector(".mamImgContainer");
-const imgWidth = mamImgContainer
-  ? mamImgContainer.querySelector("img").offsetWidth
-  : 300; // Ajusta el valor según el tamaño de las imágenes
 
 leftButton.style.opacity = "0";
 leftButton.style.pointerEvents = "none";
@@ -546,19 +558,21 @@ const updateButtons = () => {
 };
 
 leftButton.addEventListener("click", () => {
-  carrousel.scrollBy({ left: -imgWidth, behavior: "smooth" });
   if (currentId > 1) {
+    pullUpMamTextAnimation(currentId);
     currentId--;
-    console.log(currentId);
+    mamTextAnimation(currentId);
   }
+  carrousel.scrollBy({ left: -300, behavior: "smooth" });
 });
 
 rightButton.addEventListener("click", () => {
-  carrousel.scrollBy({ left: imgWidth, behavior: "smooth" });
   if (currentId < aboutMe.aboutMe.length) {
+    pushDownMamTextAnimation(currentId);
     currentId++;
-    console.log(currentId);
+    mamTextAnimation(currentId);
   }
+  carrousel.scrollBy({ left: 300, behavior: "smooth" });
 });
 
 carrousel.addEventListener("scroll", updateButtons);
