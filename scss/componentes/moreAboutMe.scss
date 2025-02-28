@@ -45,10 +45,10 @@ body {
             transform: translateY(0px);
             opacity: 1;
           }
-          // .reverseAnimation {
-          //   transform: translateY(100px);
-          //   opacity: 0;
-          // }
+          .reverseAnimation {
+            transform: translateY(100px);
+            opacity: 0;
+          }
           .moon {
             color: $mainMoon;
             border-bottom: 1px solid $mainMoon;

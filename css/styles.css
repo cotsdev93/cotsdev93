@@ -367,6 +367,10 @@ body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer .animation {
   transform: translateY(0px);
   opacity: 1;
 }
+body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer .reverseAnimation {
+  transform: translateY(100px);
+  opacity: 0;
+}
 body #moreAboutMe .mamAboutContainer .mamAbout .aboutContainer .moon {
   color: #c9c5c5;
   border-bottom: 1px solid #c9c5c5;

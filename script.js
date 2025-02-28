@@ -406,10 +406,9 @@ function moreAboutMeAnimation(currentId) {
 }
 
 function reverseMoreAboutMeAnimation(currentId) {
-  const mamAbout = document.querySelector(".mamAbout");
   const mamCarrousel = document.querySelector(".mamCarrousel");
-  reverseMamTextAnimation(currentId);
   setTimeout(() => {
+    hideMamTextAnimation(currentId);
     mamCarrousel.classList.remove("animation");
   }, 600);
   setTimeout(() => {
@@ -420,57 +419,93 @@ function reverseMoreAboutMeAnimation(currentId) {
 function mamTextAnimation(id) {
   const textAbout = document.querySelectorAll(`.textAbout[data-id="${id}"]`);
   const titleAbout = document.querySelectorAll(`.titleAbout[data-id="${id}"]`);
+  console.log("mamtext");
+ if (lastClick == "left") {
+  console.log("left")
+  setTimeout(() => {
+    textAbout.forEach((element) => {
+      element.style.opacity = "1";
+      element.style.transform = "translateY(0)";
+     });
+   }, 300);
+   setTimeout(() => {
+     titleAbout.forEach((element) => {
+       element.style.opacity = "1";
+       element.style.transform = "translateY(0)";
+     });
+   }, 200);
+} else if (lastClick == "right") {
+    setTimeout(() => {
+      textAbout.forEach((element) => {
+        element.style.opacity = "1";
+        element.style.transform = "translateY(0)";
+       });
+     }, 200);
+     setTimeout(() => {
+       titleAbout.forEach((element) => {
+         element.style.opacity = "1";
+         element.style.transform = "translateY(0)";
+       });
+     }, 300);
+    
+  }
+    
 
-  textAbout.forEach((element) => {
-    element.style.opacity = "1";
-    element.style.transform = "translateY(0)";
-  });
-  titleAbout.forEach((element) => {
-    element.style.opacity = "1";
-    element.style.transform = "translateY(0)";
-  });
 }
 
 function hideMamTextAnimation(id) {
   const textAbout = document.querySelectorAll(`.textAbout[data-id="${id}"]`);
   const titleAbout = document.querySelectorAll(`.titleAbout[data-id="${id}"]`);
+  console.log("hidetext");
 
-  textAbout.forEach((element) => {
-    element.style.opacity = "0";
-    element.style.transform = "translateY(50px)";
-  });
-  titleAbout.forEach((element) => {
-    element.style.opacity = "0";
-    element.style.transform = "translateY(50px)";
-  });
+  setTimeout(() => {
+    titleAbout.forEach((element) => {
+      element.style.opacity = "0";
+      element.style.transform = "translateY(-100px)";
+    });
+  }, 200);
+  setTimeout(() => {
+    textAbout.forEach((element) => {
+      element.style.opacity = "0";
+      element.style.transform = "translateY(-100px)";
+    });
+  }, 100);
 }
 
 function pushDownMamTextAnimation(id) {
   const textAbout = document.querySelectorAll(`.textAbout[data-id="${id}"]`);
   const titleAbout = document.querySelectorAll(`.titleAbout[data-id="${id}"]`);
-
-  textAbout.forEach((element) => {
-    element.style.opacity = "0";
-    element.style.transform = "translateY(100px)";
-  });
-  titleAbout.forEach((element) => {
-    element.style.opacity = "0";
-    element.style.transform = "translateY(100px)";
-  });
+  console.log("pushdown");
+  setTimeout(() => {
+    textAbout.forEach((element) => {
+      element.style.opacity = "0";
+      element.style.transform = "translateY(100px)";
+    });
+  }, 200);
+  setTimeout(() => {
+    titleAbout.forEach((element) => {
+      element.style.opacity = "0";
+      element.style.transform = "translateY(100px)";
+    });
+  }, 300);
 }
 
 function pullUpMamTextAnimation(id) {
   const textAbout = document.querySelectorAll(`.textAbout[data-id="${id}"]`);
   const titleAbout = document.querySelectorAll(`.titleAbout[data-id="${id}"]`);
 
-  textAbout.forEach((element) => {
-    element.style.opacity = "0";
-    element.style.transform = "translateY(-100px)";
-  });
-  titleAbout.forEach((element) => {
-    element.style.opacity = "0";
-    element.style.transform = "translateY(-100px)";
-  });
+  setTimeout(() => {
+    titleAbout.forEach((element) => {
+      element.style.opacity = "0";
+      element.style.transform = "translateY(-100px)";
+    });
+  }, 150);
+  setTimeout(() => {
+    textAbout.forEach((element) => {
+      element.style.opacity = "0";
+      element.style.transform = "translateY(-100px)";
+    });
+  }, 250);
 }
 
 class AboutMe {
@@ -557,22 +592,32 @@ const updateButtons = () => {
   }
 };
 
+let lastClick = "right"
+
+
+
 leftButton.addEventListener("click", () => {
   if (currentId > 1) {
     pullUpMamTextAnimation(currentId);
     currentId--;
-    mamTextAnimation(currentId);
+    setTimeout(() => {
+      mamTextAnimation(currentId);
+    }, 230);
   }
   carrousel.scrollBy({ left: -300, behavior: "smooth" });
+  lastClick = "left"
 });
 
 rightButton.addEventListener("click", () => {
   if (currentId < aboutMe.aboutMe.length) {
     pushDownMamTextAnimation(currentId);
     currentId++;
-    mamTextAnimation(currentId);
+    setTimeout(() => {
+      mamTextAnimation(currentId);
+    }, 230);
   }
   carrousel.scrollBy({ left: 300, behavior: "smooth" });
+   lastClick = "right"
 });
 
 carrousel.addEventListener("scroll", updateButtons);
