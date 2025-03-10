@@ -353,9 +353,9 @@ const previewContainer = document.querySelector(".previewContainer");
 const links = document.querySelectorAll(".mpLinks");
 
 const images = {
-  mpLinksGanadera: "./assets/ganaderaArenales.jpg",
-  mpLinksDas: "./assets/dasService.jpg",
-  mpLinksDres: "./assets/dresOrlandi.jpg",
+  mpLinksGanadera: "./assets/fondoGanadera.jpg",
+  mpLinksDas: "./assets/fondoDas.jpg",
+  mpLinksDres: "./assets/fondoDres.jpg",
 };
 
 // Agregar eventos a cada link
@@ -367,10 +367,34 @@ links.forEach((link) => {
     previewContainer.style.backgroundPosition = "center";
     previewContainer.style.backgroundRepeat = "no-repeat";
     previewContainer.style.opacity = "1";
+
+    // Agregar el logo si la clase es "mpLinksDas"
+    if (className === "mpLinksDas") {
+      previewContainer.innerHTML = `<img src="./assets/dasWhite.png" class="previewLogo">`;
+      const previewLogo = document.querySelector(".previewLogo");
+      setTimeout(() => {
+        previewLogo.classList.add("animate-logo");
+      }, 10);
+    }
+    if (className === "mpLinksDres") {
+      previewContainer.innerHTML = `<img src="./assets/dresLogo.png" class="previewLogo">`;
+      const previewLogo = document.querySelector(".previewLogo");
+      setTimeout(() => {
+        previewLogo.classList.add("animate-logo");
+      }, 10);
+    }
+    if (className === "mpLinksGanadera") {
+      previewContainer.innerHTML = `<img src="./assets/ganaderaLogo.png" class="previewLogo">`;
+      const previewLogo = document.querySelector(".previewLogo");
+      setTimeout(() => {
+        previewLogo.classList.add("animate-logo");
+      }, 10);
+    }
   });
 
   link.addEventListener("mouseleave", () => {
     previewContainer.style.opacity = "0"; // Se oculta cuando el mouse sale
+    previewContainer.innerHTML = ""; // Limpia el logo al salir
   });
 });
 
@@ -420,37 +444,34 @@ function mamTextAnimation(id) {
   const textAbout = document.querySelectorAll(`.textAbout[data-id="${id}"]`);
   const titleAbout = document.querySelectorAll(`.titleAbout[data-id="${id}"]`);
   console.log("mamtext");
- if (lastClick == "left") {
-  console.log("left")
-  setTimeout(() => {
-    textAbout.forEach((element) => {
-      element.style.opacity = "1";
-      element.style.transform = "translateY(0)";
-     });
-   }, 300);
-   setTimeout(() => {
-     titleAbout.forEach((element) => {
-       element.style.opacity = "1";
-       element.style.transform = "translateY(0)";
-     });
-   }, 200);
-} else if (lastClick == "right") {
+  if (lastClick == "left") {
+    console.log("left");
     setTimeout(() => {
       textAbout.forEach((element) => {
         element.style.opacity = "1";
         element.style.transform = "translateY(0)";
-       });
-     }, 200);
-     setTimeout(() => {
-       titleAbout.forEach((element) => {
-         element.style.opacity = "1";
-         element.style.transform = "translateY(0)";
-       });
-     }, 300);
-    
+      });
+    }, 300);
+    setTimeout(() => {
+      titleAbout.forEach((element) => {
+        element.style.opacity = "1";
+        element.style.transform = "translateY(0)";
+      });
+    }, 200);
+  } else if (lastClick == "right") {
+    setTimeout(() => {
+      textAbout.forEach((element) => {
+        element.style.opacity = "1";
+        element.style.transform = "translateY(0)";
+      });
+    }, 200);
+    setTimeout(() => {
+      titleAbout.forEach((element) => {
+        element.style.opacity = "1";
+        element.style.transform = "translateY(0)";
+      });
+    }, 300);
   }
-    
-
 }
 
 function hideMamTextAnimation(id) {
@@ -592,9 +613,7 @@ const updateButtons = () => {
   }
 };
 
-let lastClick = "right"
-
-
+let lastClick = "right";
 
 leftButton.addEventListener("click", () => {
   if (currentId > 1) {
@@ -605,7 +624,7 @@ leftButton.addEventListener("click", () => {
     }, 230);
   }
   carrousel.scrollBy({ left: -300, behavior: "smooth" });
-  lastClick = "left"
+  lastClick = "left";
 });
 
 rightButton.addEventListener("click", () => {
@@ -617,7 +636,7 @@ rightButton.addEventListener("click", () => {
     }, 230);
   }
   carrousel.scrollBy({ left: 300, behavior: "smooth" });
-   lastClick = "right"
+  lastClick = "right";
 });
 
 carrousel.addEventListener("scroll", updateButtons);

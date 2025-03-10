@@ -11,6 +11,17 @@ body {
       transition: opacity 0.5s ease-in-out, background-image 0.3s ease-in-out;
       pointer-events: none;
       opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .previewLogo {
+        transition: transform 0.7s ease;
+        width: 60%;
+      }
+
+      .animate-logo {
+        transform: scale(1.3);
+      }
     }
 
     .listContainer {
@@ -98,7 +109,6 @@ body {
     display: flex !important;
   }
 
-  /* Corrección para asegurar que el color cambia en modo oscuro */
   .moon .workTitle {
     color: $mainMoon !important;
   }

@@ -226,9 +226,6 @@ body.moon .pContainer::after {
   background-color: #c9c5c5 !important;
 }
 
-body {
-  /* Corrección para asegurar que el color cambia en modo oscuro */
-}
 body #myProjects {
   height: 100%;
   display: flex;
@@ -242,6 +239,16 @@ body #myProjects .previewContainer {
   transition: opacity 0.5s ease-in-out, background-image 0.3s ease-in-out;
   pointer-events: none;
   opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body #myProjects .previewContainer .previewLogo {
+  transition: transform 0.7s ease;
+  width: 60%;
+}
+body #myProjects .previewContainer .animate-logo {
+  transform: scale(1.3);
 }
 body #myProjects .listContainer {
   width: 50%;
