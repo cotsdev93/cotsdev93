@@ -484,13 +484,13 @@ function hideMamTextAnimation(id) {
       element.style.opacity = "0";
       element.style.transform = "translateY(-100px)";
     });
-  }, 200);
+  }, 100);
   setTimeout(() => {
     textAbout.forEach((element) => {
       element.style.opacity = "0";
       element.style.transform = "translateY(-100px)";
     });
-  }, 100);
+  }, 200);
 }
 
 function pushDownMamTextAnimation(id) {
