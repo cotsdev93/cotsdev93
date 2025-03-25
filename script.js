@@ -58,7 +58,8 @@ moon.addEventListener("click", (event) => {
   sun.style.opacity = "1";
   logo.classList.add("moon");
   language.classList.add("moon");
-
+  workTitle.classList.add("moon")
+  
   welcomeText.forEach((element) => {
     element.classList.add("moon");
   });
@@ -308,19 +309,23 @@ function myProjectsAnimation() {
   const mpLinksGanadera = document.querySelector(".mpLinksGanadera");
   const mpLinksDas = document.querySelector(".mpLinksDas");
   const mpLinksDres = document.querySelector(".mpLinksDres");
+  const mpLinksIndumepla = document.querySelector(".mpLinksIndumepla")
   const previewContainer = document.querySelector(".previewContainer");
 
   setTimeout(() => {
     titleContainer.classList.add("animation");
-  }, 800);
+  }, 1000);
   setTimeout(() => {
     mpLinksGanadera.classList.add("animation");
-  }, 600);
+  }, 800);
   setTimeout(() => {
     mpLinksDas.classList.add("animation");
-  }, 400);
+  }, 600);
   setTimeout(() => {
     mpLinksDres.classList.add("animation");
+  }, 400);
+  setTimeout(() => {
+    mpLinksIndumepla.classList.add("animation");
   }, 200);
 }
 
@@ -356,6 +361,7 @@ const images = {
   mpLinksGanadera: "./assets/fondoGanadera.jpg",
   mpLinksDas: "./assets/fondoDas.jpg",
   mpLinksDres: "./assets/fondoDres.jpg",
+  mpLinksIndumepla: "./assets/fondoIndumepla.jpg"
 };
 
 // Agregar eventos a cada link
@@ -390,6 +396,14 @@ links.forEach((link) => {
         previewLogo.classList.add("animate-logo");
       }, 10);
     }
+    if (className === "mpLinksIndumepla") {
+      previewContainer.innerHTML = `<img src="./assets/indumeplaLogo.png" class="previewLogo">`;
+      const previewLogo = document.querySelector(".previewLogo");
+      setTimeout(() => {
+        previewLogo.classList.add("animate-logo");
+      }, 10);
+    }
+    
   });
 
   link.addEventListener("mouseleave", () => {
